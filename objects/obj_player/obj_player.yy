@@ -37,5 +37,5 @@
     "path":"sprites/Sprite6/Sprite6.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }
