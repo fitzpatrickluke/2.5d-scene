@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"vertex_set_cube",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vertex_set_cube",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

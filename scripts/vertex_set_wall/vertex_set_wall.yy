@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"vertex_set_wall",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vertex_set_wall",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
