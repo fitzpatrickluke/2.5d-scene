@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite6",
-    "path":"sprites/Sprite6/Sprite6.yy",
+    "name":"Sprite2",
+    "path":"sprites/Sprite2/Sprite2.yy",
   },
   "spriteMaskId":null,
   "visible":true,
