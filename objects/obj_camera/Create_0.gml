@@ -7,3 +7,4 @@ window_center();
 
 layer_force_draw_depth(true, 0);
 
+//application_surface_enable(false);

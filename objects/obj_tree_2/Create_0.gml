@@ -10,6 +10,7 @@ vertex_format = vertex_format_end();
 v_buffer = vertex_create_buffer();
 vertex_begin(v_buffer, vertex_format);
 
-vertex_set_cube(v_buffer, x, y, 0, 24, 24, 0, 0)
+//vertex_set_cube(v_buffer, x, y, 0, 24, 24, 0, 0);
+vertex_set_cube_round(v_buffer, x, y, 0, 24, 24, 0, 0, 4)
 
 vertex_end(v_buffer);

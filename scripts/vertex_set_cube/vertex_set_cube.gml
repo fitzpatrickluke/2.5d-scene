@@ -29,36 +29,36 @@ function vertex_set_cube(argument0, argument1, argument2, argument3, argument4, 
 	vertex_add_point(v_buffer, x1, y1, z1, -1, 0, 0, 0, 1, c_white, 1); // TR
 	vertex_add_point(v_buffer, x1, y2, z1, -1, 0, 0, 1, 1, c_white, 1); // BR
 
-	vertex_add_point(v_buffer, x1, y1, z2, -1, 0, 0, 0, 0, c_white, 1); // TL
-	vertex_add_point(v_buffer, x1, y2, z2, -1, 0, 0, 1, 0, c_white, 1); // BR
-	vertex_add_point(v_buffer, x1, y2, z1, -1, 0, 0, 1, 1, c_white, 1); // BL
+	vertex_add_point(v_buffer, x1, y2, z1, -1, 0, 0, 1, 1, c_white, 1); // TL
+	vertex_add_point(v_buffer, x1, y1, z2, -1, 0, 0, 0, 0, c_white, 1); // BR
+	vertex_add_point(v_buffer, x1, y2, z2, -1, 0, 0, 1, 0, c_white, 1); // BL
 
 	// FRONT
 	vertex_add_point(v_buffer, x1, y2, z2, 0, 0, -1, 0, 0, c_white, 1); // TL
 	vertex_add_point(v_buffer, x1, y2, z1, 0, 0, -1, 0, 1, c_white, 1); // TR
 	vertex_add_point(v_buffer, x2, y2, z1, 0, 0, -1, 1, 1, c_white, 1); // BR
 
-	vertex_add_point(v_buffer, x1, y2, z2, 0, 0, -1, 0, 0, c_white, 1); // TL
-	vertex_add_point(v_buffer, x2, y2, z2, 0, 0, -1, 1, 0, c_white, 1); // BR
-	vertex_add_point(v_buffer, x2, y2, z1, 0, 0, -1, 1, 1, c_white, 1); // BL
+	vertex_add_point(v_buffer, x2, y2, z1, 0, 0, -1, 1, 1, c_white, 1); // TL
+	vertex_add_point(v_buffer, x1, y2, z2, 0, 0, -1, 0, 0, c_white, 1); // BR
+	vertex_add_point(v_buffer, x2, y2, z2, 0, 0, -1, 1, 0, c_white, 1); // BL
 
 	// RIGHT
-	vertex_add_point(v_buffer, x2, y1, z2, 1, 0, 0, 0, 0, c_blue, 1); // TL
-	vertex_add_point(v_buffer, x2, y1, z1, 1, 0, 0, 0, 1, c_blue, 1); // TR
-	vertex_add_point(v_buffer, x2, y2, z1, 1, 0, 0, 1, 1, c_blue, 1); // BR
+	vertex_add_point(v_buffer, x2, y2, z2, 1, 0, 0, 0, 0, c_blue, 1); // TL
+	vertex_add_point(v_buffer, x2, y2, z1, 1, 0, 0, 0, 1, c_blue, 1); // TR
+	vertex_add_point(v_buffer, x2, y1, z1, 1, 0, 0, 1, 1, c_blue, 1); // BR
 
-	vertex_add_point(v_buffer, x2, y1, z2, 1, 0, 0, 0, 0, c_blue, 1); // TL
-	vertex_add_point(v_buffer, x2, y2, z2, 1, 0, 0, 1, 0, c_blue, 1); // BR
-	vertex_add_point(v_buffer, x2, y2, z1, 1, 0, 0, 1, 1, c_blue, 1); // BL
+	vertex_add_point(v_buffer, x2, y1, z1, 1, 0, 0, 1, 1, c_blue, 1); // TL
+	vertex_add_point(v_buffer, x2, y2, z2, 1, 0, 0, 0, 0, c_blue, 1); // BR
+	vertex_add_point(v_buffer, x2, y1, z2, 1, 0, 0, 1, 0, c_blue, 1); // BL
 	
 	// TOP
-	vertex_add_point(v_buffer, x1, y2, z2, 0, 1, 0, 0, 0, c_blue, 1); // TL
-	vertex_add_point(v_buffer, x1, y1, z2, 0, 1, 0, 0, 1, c_blue, 1); // TR
-	vertex_add_point(v_buffer, x2, y1, z2, 0, 1, 0, 1, 1, c_blue, 1); // BR
+	vertex_add_point(v_buffer, x2, y1, z2, 0, 1, 0, 0, 1, c_blue, 1); // TL
+	vertex_add_point(v_buffer, x1, y1, z2, 0, 1, 0, 0, 0, c_blue, 1); // TR
+	vertex_add_point(v_buffer, x2, y2, z2, 0, 1, 0, 1, 1, c_blue, 1); // BR
 
-	vertex_add_point(v_buffer, x1, y2, z2, 0, 1, 0, 0, 0, c_blue, 1); // TL
-	vertex_add_point(v_buffer, x2, y2, z2, 0, 1, 0, 1, 0, c_blue, 1); // BR
-	vertex_add_point(v_buffer, x2, y1, z2, 0, 1, 0, 1, 1, c_blue, 1); // BL
+	vertex_add_point(v_buffer, x2, y2, z2, 0, 1, 0, 1, 1, c_blue, 1); // TL
+	vertex_add_point(v_buffer, x1, y1, z2, 0, 1, 0, 0, 0, c_blue, 1); // BR
+	vertex_add_point(v_buffer, x1, y2, z2, 0, 1, 0, 0, 1, c_blue, 1); // BL
 	
 	// bottom and back fasces are never seen so do not draw them
 
