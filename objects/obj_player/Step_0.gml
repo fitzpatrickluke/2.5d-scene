@@ -1,4 +1,10 @@
 
+if(place_meeting(x,y, obj_ground)) {
+	var oo = instance_place(x, y, obj_ground)
+	zz = 24+oo.land_oz;
+}
+else
+	zz = 0;
 	
 	
 var spd = 2;

@@ -3,6 +3,7 @@ curr_frame = 0;
 max_frame = 1;
 alarm[0] = 15;
 
+zz = 0;
 
 spr_width = 48;
 spr_height = 48;

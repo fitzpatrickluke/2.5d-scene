@@ -18,14 +18,15 @@ function vertex_set_wall(argument0, argument1, argument2, argument3, argument4, 
 	var x2 = xx;
 	var z1 = zz;
 	var z2 = zz+hh;
+	var y2 = yy-24; // account for camera tilt
 
 	// FRONT
-	vertex_add_point(v_buffer, x1, y1, z2, 0, 0, -1, 0, 0, c_white, 1); // TL
+	vertex_add_point(v_buffer, x1, y2, z2, 0, 0, -1, 0, 0, c_white, 1); // TL
 	vertex_add_point(v_buffer, x1, y1, z1, 0, 0, -1, 0, 1, c_white, 1); // TR
 	vertex_add_point(v_buffer, x2, y1, z1, 0, 0, -1, 1, 1, c_white, 1); // BR
 
-	vertex_add_point(v_buffer, x1, y1, z2, 0, 0, -1, 0, 0, c_white, 1); // TL
-	vertex_add_point(v_buffer, x2, y1, z2, 0, 0, -1, 1, 0, c_white, 1); // BR
+	vertex_add_point(v_buffer, x1, y2, z2, 0, 0, -1, 0, 0, c_white, 1); // TL
+	vertex_add_point(v_buffer, x2, y2, z2, 0, 0, -1, 1, 0, c_white, 1); // BR
 	vertex_add_point(v_buffer, x2, y1, z1, 0, 0, -1, 1, 1, c_white, 1); // BL
 
 }
