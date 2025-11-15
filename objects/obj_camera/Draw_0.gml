@@ -13,7 +13,8 @@ shader_reset();
 */
 
 
-shader_set(shader_test_light);
+shader_set(shader_test_light_2);
+shader_set_uniform_f(shader_get_uniform(shader_test_light_2, "lightDirection"), sun_dx, sun_dy, sun_dz);
 
 with(obj_ground) {
 event_perform(ev_draw, 0);

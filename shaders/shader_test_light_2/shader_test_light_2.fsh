@@ -1,19 +1,19 @@
-precision mediump float;
+varying vec2 v_vTexcoord;
+varying vec4 v_vColour;
 
-varying vec2 v_tex;
-varying vec3 v_nrm;
+varying vec3 v_worldPosition;
+varying vec3 v_worldNormal;
 
-uniform sampler2D u_texture;
-uniform vec3 u_lightDir;   // normalized
-uniform float u_strength;  // 0–2
+uniform vec3 lightDirection;
 
 void main() {
-    vec4 albedo = texture2D(u_texture, v_tex);
-
-    // simple N·L lighting
-    float ndl = max(dot(normalize(v_nrm), normalize(-u_lightDir)), 0.0);
-
-    vec3 lit = albedo.rgb * (0.2 + ndl * u_strength); // 0.2 = tiny ambient
-
-    gl_FragColor = vec4(lit, albedo.a);
+    vec4 starting_color = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
+    
+    vec4 lightAmbient = vec4(0.25, 0.25, 0.25, 1);
+    vec3 lightDirection = normalize(lightDirection);
+    
+    float NdotL = max(0.0, -dot(v_worldNormal, lightDirection));
+    
+    vec4 final_color = starting_color * vec4(min(lightAmbient + NdotL, vec4(1)).rgb, starting_color.a);
+    gl_FragColor = final_color;
 }
