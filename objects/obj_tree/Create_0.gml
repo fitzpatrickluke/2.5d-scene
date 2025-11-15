@@ -20,8 +20,7 @@ vertex_format_add_color();
 vertex_format = vertex_format_end();
 
 v_buffer = vertex_create_buffer();
-vertex_begin(v_buffer, vertex_format);
 
-vertex_set_wall(v_buffer, x, y, 0, 72, 72);
+zz = 0;
 
-vertex_end(v_buffer);
+alarm[0] = 1;

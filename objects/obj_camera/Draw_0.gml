@@ -15,17 +15,14 @@ shader_reset();
 
 shader_set(shader_test_light);
 
+with(obj_ground) {
+event_perform(ev_draw, 0);
+}
 
-
+shader_reset();
 with(obj_tree) {
 event_perform(ev_draw, 0);
 }
-with(obj_tree_2) {
-event_perform(ev_draw, 0);
-}
-gpu_set_blendmode(bm_normal);
-shader_reset();
-
 
 with(obj_player) {
 event_perform(ev_draw, 0);

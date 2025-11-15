@@ -13,9 +13,9 @@ function vertex_set_wall(argument0, argument1, argument2, argument3, argument4, 
 	var ww = argument4;
 	var hh = argument5;
 	
-	var x1 = xx;
+	var x1 = xx-ww;
 	var y1 = yy;
-	var x2 = xx+ww;
+	var x2 = xx;
 	var z1 = zz;
 	var z2 = zz+hh;
 

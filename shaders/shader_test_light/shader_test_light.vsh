@@ -14,7 +14,7 @@ void main()
     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;
 	
-	vec3 lightDirection = -normalize(vec3(1., 0.5, 1.));
+	vec3 lightDirection = -normalize(vec3(.5, -1., 0.5));
 
 	vec4 lightColor = vec4(1., 1., 1., 1.);
 	vec3 worldNormal = normalize(gm_Matrices[MATRIX_WORLD] * vec4(in_Normal, 0.)).xyz;
