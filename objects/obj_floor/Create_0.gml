@@ -7,7 +7,7 @@ vertex_format = vertex_format_end();
 
 v_buffer = vertex_create_buffer();
 
-zz = 1;
+zz = 0;
 
 vertex_begin(v_buffer, vertex_format);
 

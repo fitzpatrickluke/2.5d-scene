@@ -5,13 +5,13 @@ var camera = camera_get_active();
 
 #region
 // pov sun
-var x_from = 0;
-var y_from = 0;
-var z_from = 200;
+var x_from = sun_x;
+var y_from = sun_y;
+var z_from = sun_z;
 
-var x_to = x_from + 1;
-var y_to = y_from + 1;
-var z_to = z_from + -1;
+var x_to = x_from + sun_dx;
+var y_to = y_from + sun_dy;
+var z_to = z_from + sun_dz;
 
 shader_set(shader_depth);
 
@@ -25,12 +25,10 @@ camera_apply(camera);
 
 draw_clear(c_black);
 
-with(obj_ground) {
-event_perform(ev_draw, 0);
-}
-with(obj_tree) {
-event_perform(ev_draw, 0);
-}
+with(obj_ground) {event_perform(ev_draw, 0);}
+with(obj_tree) {event_perform(ev_draw, 0);}
+with(obj_ground) {event_perform(ev_draw, 0);}
+with(obj_player) {event_perform(ev_draw, 0);}
 
 shader_reset();
 surface_reset_target();
@@ -59,22 +57,14 @@ camera_set_view_mat(camera, view_mat);
 camera_set_proj_mat(camera, proj_mat);
 camera_apply(camera);
 
-draw_clear(c_black);
+draw_clear(c_white);
 
-with(obj_ground) {
-event_perform(ev_draw, 0);
-}
-with(obj_tree) {
-event_perform(ev_draw, 0);
-}
+with(obj_ground) {event_perform(ev_draw, 0);}
+with(obj_tree) {event_perform(ev_draw, 0);}
 
 shader_reset();
 
-with(obj_floor) {
-event_perform(ev_draw, 0);
-}
-with(obj_player) {
-event_perform(ev_draw, 0);
-}
+with(obj_floor) {event_perform(ev_draw, 0);}
+with(obj_player) {event_perform(ev_draw, 0);}
 
 #endregion

@@ -20,7 +20,7 @@ void main()
 	float ambient = 0.2;
 	vec4 lightColor = vec4(1., 1., 1., 1.);
 	//vec3 lightDirection = -normalize(vec3(.5, -1., 0.5));
-	vec3 lightDirection = -normalize(vec3(0., -1., 0.));
+	vec3 lightDirection = -normalize(vec3(0.5, -1., 0.5));
 	
 	float NdotL = max(dot(v_worldNormal, lightDirection), 0.) + ambient;
 	
@@ -33,7 +33,7 @@ void main()
 	
 	float bias = 0.01;
 	if (v_lightDist > depthValue + bias) {
-        final_col.rgb *= 0.5;
+        final_col.rgb *= 0.1;
     }
 	
 	
