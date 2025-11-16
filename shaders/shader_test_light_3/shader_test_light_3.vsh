@@ -10,6 +10,13 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 varying vec3 v_worldNormal;
 
+uniform mat4 u_lightViewMap;
+uniform mat4 u_lightProjMap;
+
+varying float v_lightDist;
+varying vec2 v_ShadowTexcoord;
+
+
 void main()
 {
     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);
@@ -20,4 +27,12 @@ void main()
     v_vColour = in_Colour;
     v_vTexcoord = in_TextureCoord;
 	v_worldNormal = worldNormal;
+	
+	vec4 worldSpace = gm_Matrices[MATRIX_WORLD] * vec4(in_Position, 1.);
+	vec4 cameraSpace = u_lightViewMap * worldSpace;
+	vec4 screenSpace = u_lightProjMap * cameraSpace;
+	
+	v_lightDist = screenSpace.z / screenSpace.w;
+	v_ShadowTexcoord = ((screenSpace.xy / screenSpace.w) * 0.5) + 0.5;
+	
 }
