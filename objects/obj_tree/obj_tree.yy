@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite5",
-    "path":"sprites/Sprite5/Sprite5.yy",
+    "name":"spr_tex_tree",
+    "path":"sprites/spr_tex_tree/spr_tex_tree.yy",
   },
   "spriteMaskId":null,
   "visible":false,
