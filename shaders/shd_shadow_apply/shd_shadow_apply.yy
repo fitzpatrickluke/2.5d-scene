@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_shadow_apply",
+  "name":"shd_shadow_apply",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}
