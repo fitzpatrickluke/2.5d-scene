@@ -15,5 +15,7 @@ This current draft of the project is still very much just a skeleton. At this po
 Going into this I did not realize how manu new graphics topics I would have to learn. I think something like Unity would have been a better engine for this ha ha. But I stuck with what I'm comfortable with. I've definitly been following a lot of youtube tutorials for this project. Various previous weekly assignment I feel slowly got me comfortable with all the new coding problem's I've had to learn. I definitly think if I tried making this project a few months back I would get overwhelmed and quit.
 
 This also is just a bit more low level then I'm used to working with. I've been using a lot of shaders. But another big thing was learning how 3d shapes are made. I physically sketched out vertices on paper and how they would form cubes. So the 3d shapes are all made via code, line by line. Is this the best way for 3d shapes, probably not, but it was a good learning experience that eased me into how everything worked. 
+
+Also most of the code I didn't write but more so found online and took some time understanding how it worked.
 *************************************************************************************
 
