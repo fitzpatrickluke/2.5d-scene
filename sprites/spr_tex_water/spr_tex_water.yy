@@ -19,6 +19,7 @@
   "height":72,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"5251b060-fd55-467c-93b6-d7da11ad44b2","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"5251b060-fd55-467c-93b6-d7da11ad44b2","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"9fb54f46-5877-4648-aa49-14e81048694b","blendMode":0,"displayName":"default","isLocked":false,"name":"9fb54f46-5877-4648-aa49-14e81048694b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_tex_water",

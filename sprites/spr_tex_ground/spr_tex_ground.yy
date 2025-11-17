@@ -19,6 +19,7 @@
   "height":24,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"013b6ead-fe91-425d-92c7-8a48a787f2db","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"013b6ead-fe91-425d-92c7-8a48a787f2db","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"07b2188d-c645-46eb-8150-bf82337baebb","blendMode":0,"displayName":"default","isLocked":false,"name":"07b2188d-c645-46eb-8150-bf82337baebb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_tex_ground",

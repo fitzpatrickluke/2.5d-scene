@@ -9,7 +9,7 @@ else
 	
 var spd = 2;
 
-if(keyboard_check(vk_down)) {
+if(keyboard_check(vk_down) || keyboard_check(ord("S"))) {
 
 	var lay_id = layer_get_id("Tiles_1");
 	var map_id = layer_tilemap_get_id(lay_id);
@@ -19,7 +19,7 @@ if(keyboard_check(vk_down)) {
 	curr_dir = 0;
 	max_frame = 1;
 }
-else if(keyboard_check(vk_up)) {
+else if(keyboard_check(vk_up) || keyboard_check(ord("W"))) {
 	
 	var lay_id = layer_get_id("Tiles_1");
 	var map_id = layer_tilemap_get_id(lay_id);
@@ -29,7 +29,7 @@ else if(keyboard_check(vk_up)) {
 	curr_dir = 1;
 	max_frame = 1;
 }
-else if(keyboard_check(vk_right)) {
+else if(keyboard_check(vk_right) || keyboard_check(ord("D"))) {
 
 	
 	var lay_id = layer_get_id("Tiles_1");
@@ -41,7 +41,7 @@ else if(keyboard_check(vk_right)) {
 	max_frame = 1;
 
 }
-else if(keyboard_check(vk_left)) {
+else if(keyboard_check(vk_left) || keyboard_check(ord("A"))) {
 
 
 	var lay_id = layer_get_id("Tiles_1");

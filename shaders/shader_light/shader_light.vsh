@@ -16,6 +16,8 @@ uniform mat4 u_lightProjMap;
 varying float v_lightDist;
 varying vec2 v_ShadowTexcoord;
 
+varying float v_depth;
+
 
 void main()
 {
@@ -34,5 +36,7 @@ void main()
 	
 	v_lightDist = screenSpace.z / screenSpace.w;
 	v_ShadowTexcoord = ((screenSpace.xy / screenSpace.w) * 0.5) + 0.5;
+	
+	v_depth = (gm_Matrices[MATRIX_WORLD_VIEW] * vec4(in_Position, 1.)).z;
 	
 }

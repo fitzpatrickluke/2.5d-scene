@@ -4,8 +4,9 @@
 /// @param zz
 /// @param ww
 /// @param hh
+/// @param rot_offset
 
-function vertex_set_wall(argument0, argument1, argument2, argument3, argument4, argument5){
+function vertex_set_wall(argument0, argument1, argument2, argument3, argument4, argument5, argument6){
 	var vbuffer = argument0;
 	var xx = argument1;
 	var yy = argument2;
@@ -18,7 +19,7 @@ function vertex_set_wall(argument0, argument1, argument2, argument3, argument4, 
 	var x2 = xx;
 	var z1 = zz;
 	var z2 = zz+hh;
-	var y2 = yy-24; // account for camera tilt
+	var y2 = yy-argument6 // account for camera tilt
 
 	// FRONT
 	vertex_add_point(v_buffer, x1, y2, z2, 0, 0, -1, 0, 0, c_white, 1); // TL

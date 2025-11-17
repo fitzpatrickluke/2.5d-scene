@@ -8,6 +8,8 @@ varying vec3 v_worldNormal;
 varying float v_lightDist;
 varying vec2 v_ShadowTexcoord;
 
+varying float v_depth;
+
 uniform sampler2D s_DepthTexture;
 
 const vec3 UNDO = vec3(1.0, 256.0, 65536.0) / 16777215.0 * 255.0;
@@ -18,7 +20,7 @@ float depthFromColor(vec3 color) {
 void main()
 {
 	float ambient = 0.2;
-	vec4 lightColor = vec4(1., 1., 1., 1.);
+	vec4 lightColor = vec4(1., 5., 5., 1.);
 	//vec3 lightDirection = -normalize(vec3(.5, -1., 0.5));
 	vec3 lightDirection = -normalize(vec3(0.5, -1., 0.5));
 	
@@ -36,8 +38,12 @@ void main()
         final_col.rgb *= 0.1;
     }
 	
+	final_col *= 2.;// high exposure
+
 	
-	gl_FragColor = final_col;
+	gl_FragData[0] = final_col;
+	gl_FragData[1] = vec4(v_depth, 0., 0., 1.);
 }
+
 
 
