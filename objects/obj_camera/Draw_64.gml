@@ -1,0 +1,1 @@
+draw_surface(surface_2, 0, 0)

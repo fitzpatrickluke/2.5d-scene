@@ -48,6 +48,7 @@
     {"id":{"name":"vertex_set_wall","path":"scripts/vertex_set_wall/vertex_set_wall.yy",},},
     {"id":{"name":"shader_depth","path":"shaders/shader_depth/shader_depth.yy",},},
     {"id":{"name":"shader_light","path":"shaders/shader_light/shader_light.yy",},},
+    {"id":{"name":"Shader3","path":"shaders/Shader3/Shader3.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
     {"id":{"name":"spr_tex_ground","path":"sprites/spr_tex_ground/spr_tex_ground.yy",},},
     {"id":{"name":"spr_tex_leaf","path":"sprites/spr_tex_leaf/spr_tex_leaf.yy",},},

@@ -14,3 +14,5 @@ c_bot = make_color_rgb(0, 0, 0);
 c_top_2 = make_color_rgb(0, spr_height, 0);
 
 c_top_3 = make_color_rgb(0, 0, spr_height);
+
+

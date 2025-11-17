@@ -7,5 +7,3 @@ draw_sprite(spr_player, curr_dir*2+curr_frame, 0, 0);
 
 
 matrix_set(matrix_world, matrix_build_identity());
-
-
