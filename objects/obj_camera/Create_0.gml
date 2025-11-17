@@ -27,7 +27,19 @@ sun_dy = 1.0;
 sun_dz = -1.0; 
 
 
+occlusion_quality = 64;
 
+depthmap = -1;
+normalmap = -1;
+ssao_surface = -1;
+//generate our kernels
+for (var o = 0; o < occlusion_quality; o++) {
+     var scale = o / occlusion_quality; 
+     scale = lerp(.1, 1, scale * scale) * random(1);
+     _KERNEL[(o*3)+0] = random_range(-1,1)*scale;
+     _KERNEL[(o*3)+1] = random_range(-1,1)*scale;
+     _KERNEL[(o*3)+2] = random_range(.1,1)*scale;
+}
 
 
 

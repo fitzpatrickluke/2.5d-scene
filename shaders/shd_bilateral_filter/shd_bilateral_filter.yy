@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_bilateral_filter",
+  "name":"shd_bilateral_filter",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

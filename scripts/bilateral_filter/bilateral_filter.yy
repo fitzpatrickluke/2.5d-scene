@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"bilateral_filter",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bilateral_filter",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
