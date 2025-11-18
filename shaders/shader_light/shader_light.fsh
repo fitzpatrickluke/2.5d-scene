@@ -33,12 +33,34 @@ void main()
 	vec4 sampledDepthColor = texture2D(s_DepthTexture, v_ShadowTexcoord);
 	float depthValue = depthFromColor(sampledDepthColor.rgb);
 	
-	float bias = 0.01;
+	/*
+	float bias = 0.;//max(0.05 * (1.0 -dot(v_worldNormal, lightDirection)), 0.0005);  
 	if (v_lightDist > depthValue + bias) {
         final_col.rgb *= 0.1;
     }
+	*/
 	
-	final_col *= 2.;// high exposure
+	float bias = 0.0;//1;
+	float shadow = 0.0;
+	vec2 texelSize = vec2(1.0 / 1024.0);
+	for(int x = -2; x <= 2; x+=1)
+	{
+	    for(int y = -2; y <= 2; y+=1)
+	    {
+	       float sampleDepth = depthFromColor(
+            texture2D(
+                s_DepthTexture,
+                v_ShadowTexcoord + vec2(x, y) * texelSize
+            ).rgb
+        );
+		        shadow += (v_lightDist > sampleDepth + bias) ? 0.8 : 0.0;
+	    }    
+	}
+	shadow /= 25.;
+	final_col.rgb *= 1.0 - shadow;
+
+	
+	//final_col *= 2.;// high exposure
 
 	
 	gl_FragData[0] = final_col;
