@@ -6,7 +6,7 @@ https://drive.google.com/file/d/15TaiStUJfceNYtZCc51U6uIk9-BG3bvn/view?usp=shari
 
 *************************************************************************************
 For my final project I decided to try something that has been piquing my interest for quite some time now. That being 2.5d. Where 2d images/ sprites are placed within a 3d world.
-For my environment I was using the GameMaker platform. I use it a lot for hobby projects and whatever build for this project I can hopefully translate into future ones. The engine is also quite similar to how p5js functions. That is objects have a create and draw function where nearly all the code is placed. As such, translating my skills from class was pretty seemless.
+For my environment I was using the GameMaker platform. I use it a lot for hobby projects. So despit being a bit difficult to do all this in, I'll hopefully be able to use it in the future. The engine is also quite similar to how p5js functions. That is objects have a create and draw function where nearly all the code is placed. As such, translating my skills from class was pretty seemless.
 
 I am making a small simple scene of a river that can be moved around a bit. Nothing too major. No interaction besides moving the fairy sprite around.
 
