@@ -22,7 +22,7 @@ void main()
 	float ambient = 0.2;
 	vec4 lightColor = vec4(1., 5., 5., 1.);
 	//vec3 lightDirection = -normalize(vec3(.5, -1., 0.5));
-	vec3 lightDirection = -normalize(vec3(0.5, -1., 0.5));
+	vec3 lightDirection = -normalize(vec3(1., -1., -1.));
 	
 	float NdotL = max(dot(v_worldNormal, lightDirection), 0.) + ambient;
 	
@@ -57,6 +57,7 @@ void main()
 	    }    
 	}
 	shadow /= 25.;
+
 	final_col.rgb *= 1.0 - shadow;
 
 	
