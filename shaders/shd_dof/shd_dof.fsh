@@ -28,7 +28,23 @@ void main()
 	
 	vec4 finalCol = mix(color_main, color_blur, blur_amount);
 	
+	/////////////// BLOOM
 	finalCol += color_bloom*0.5;
+	
+		////////////// COLOR GRADING
+	float u_warmth = 1.;
+	finalCol.r += u_warmth * 0.1; 
+    finalCol.g += u_warmth * 0.05;
+    finalCol.b -= u_warmth * 0.05;
+    finalCol = clamp(finalCol, 0.0, 1.0);
+	
+	////////////// VIGNETTE
+	vec2 center = vec2(0.5, 0.5);
+    float dist = distance(v_vTexcoord, center);
+    float vignette = smoothstep(0.4, 0.9, dist);
+    finalCol.rgb *= mix(1.0, 0.1, vignette);
+	
+
 	
     gl_FragColor = finalCol;
 
