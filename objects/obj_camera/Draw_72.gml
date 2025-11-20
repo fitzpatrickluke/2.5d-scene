@@ -22,6 +22,18 @@ if (!surface_exists(surf_depth)) {
     surf_depth = surface_create(window_get_width(), window_get_height(), surface_r32float);
 }
 
+if (!surface_exists(surf_bloom)) {
+    surf_bloom = surface_create(window_get_width(), window_get_height(), surface_r32float);
+}
+if (!surface_exists(surf_bloom_blur)) {
+    surf_bloom_blur = surface_create(window_get_width(), window_get_height(), surface_r32float);
+}
+if (!surface_exists(surf_bloom_blur_h)) {
+    surf_bloom_blur_h = surface_create(window_get_width(), window_get_height(), surface_r32float);
+}
+
+
+
 
 
 

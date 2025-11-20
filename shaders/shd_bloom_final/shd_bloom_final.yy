@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"shd_bloom_final",
+  "name":"shd_bloom_final",
+  "parent":{
+    "name":"Shaders",
+    "path":"folders/Shaders.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

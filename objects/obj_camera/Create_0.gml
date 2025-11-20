@@ -29,6 +29,8 @@ sun_dz = -1.0;
 surf_blur_h = surface_create(window_get_width(), window_get_height());
 surf_blur = surface_create(window_get_width(), window_get_height());
 surf_depth = surface_create(window_get_width(), window_get_height(), surface_r32float);
-
+surf_bloom = surface_create(window_get_width(), window_get_height());
+surf_bloom_blur_h = surface_create(window_get_width(), window_get_height());
+surf_bloom_blur = surface_create(window_get_width(), window_get_height());
 
 

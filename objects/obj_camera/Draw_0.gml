@@ -41,6 +41,8 @@ shader_set_uniform_f_array(shader_get_uniform(shader_light,"u_lightViewMap"), li
 shader_set_uniform_f_array(shader_get_uniform(shader_light,"u_lightProjMap"), light_proj_mat);
 texture_set_stage(shader_get_sampler_index(shader_light, "s_DepthTexture"), surface_get_texture(shadowmap_surface));
 shader_set_uniform_f(shader_get_uniform(shader_light,"u_lightDirection"), sun_dx, sun_dz, -sun_dy);
+shader_set_uniform_f(shader_get_uniform(shader_light,"u_pointLightPos"), 400., -100, -100.);
+shader_set_uniform_f(shader_get_uniform(shader_light,"u_pointLightRange"), 20.);
 surface_set_target(surface_1);
 surface_set_target_ext(1, surf_depth)
 
@@ -95,6 +97,7 @@ surface_reset_target();
 #endregion
 
 
+// DOF
 var surf_width = surface_get_width(application_surface);
 var surf_height = surface_get_height(application_surface);
 
@@ -115,6 +118,37 @@ shader_set(shd_blur_v);
 shader_set_uniform_f(shader_get_uniform(shd_blur_v, "texture_size"), surf_width, surf_height);
 shader_set_uniform_f(shader_get_uniform(shd_blur_v, "blur_radius"), 10);
 draw_surface(surf_blur_h, 0, 0);
+shader_reset();
+
+surface_reset_target();
+
+
+// BLOOM
+surface_set_target(surf_bloom);
+draw_clear(c_black);
+shader_set(shd_bloom);
+draw_surface(surface_1, 0, 0);
+shader_reset();
+
+surface_reset_target();
+
+surface_set_target(surf_bloom_blur_h);
+draw_clear(c_black);
+shader_set(shd_blur_h);
+
+shader_set_uniform_f(shader_get_uniform(shd_blur_h, "texture_size"), surf_width, surf_height);
+shader_set_uniform_f(shader_get_uniform(shd_blur_h, "blur_radius"), 10);
+draw_surface(surf_bloom, 0, 0);
+surface_reset_target();
+shader_reset();
+
+surface_set_target(surf_bloom_blur);
+draw_clear(c_black);
+shader_set(shd_blur_v);
+
+shader_set_uniform_f(shader_get_uniform(shd_blur_v, "texture_size"), surf_width, surf_height);
+shader_set_uniform_f(shader_get_uniform(shd_blur_v, "blur_radius"), 10);
+draw_surface(surf_bloom_blur_h, 0, 0);
 shader_reset();
 
 surface_reset_target();

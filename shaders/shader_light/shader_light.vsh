@@ -18,6 +18,8 @@ varying vec2 v_ShadowTexcoord;
 
 varying float v_depth;
 
+varying vec3 v_worldPos;
+
 
 void main()
 {
@@ -33,6 +35,8 @@ void main()
 	vec4 worldSpace = gm_Matrices[MATRIX_WORLD] * vec4(in_Position, 1.);
 	vec4 cameraSpace = u_lightViewMap * worldSpace;
 	vec4 screenSpace = u_lightProjMap * cameraSpace;
+	
+	v_worldPos = worldSpace.xyz;
 	
 	v_lightDist = screenSpace.z / screenSpace.w;
 	v_ShadowTexcoord = ((screenSpace.xy / screenSpace.w) * 0.5) + 0.5;

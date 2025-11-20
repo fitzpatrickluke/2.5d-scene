@@ -13,6 +13,12 @@ varying float v_depth;
 uniform sampler2D s_DepthTexture;
 uniform vec3 u_lightDirection;
 
+uniform vec3 u_pointLightPos;
+uniform vec3 u_pointLightColor;
+uniform float u_pointLightRange; 
+
+varying vec3 v_worldPos;
+
 const vec3 UNDO = vec3(1.0, 256.0, 65536.0) / 16777215.0 * 255.0;
 float depthFromColor(vec3 color) {
     return dot(color, UNDO);
@@ -20,10 +26,10 @@ float depthFromColor(vec3 color) {
 
 void main()
 {
+	// directional light stuff
+	
 	float ambient = 0.2;
 	vec4 lightColor = vec4(1., 5., 5., 1.);
-	//vec3 lightDirection = -normalize(vec3(.5, -1., 0.5));
-	//vec3 lightDirection = -normalize(vec3(1., -1., -1.));
 	
 	vec3 lightDirection = -normalize(vec3(u_lightDirection));
 	
@@ -31,8 +37,22 @@ void main()
 	
 	vec4 final_col =  v_vColour * texture2D( gm_BaseTexture, v_vTexcoord )*vec4((lightColor * NdotL).xyz, 1.);
 	
-    //gl_FragColor = texture2D(s_DepthTexture, v_ShadowTexcoord);//final_col;
+	// Point light stuff
+	/*
+	vec4 lightColor = vec4(1., 5., 5., 1.);
+	vec4 lightAmbient = vec4(0.25, 0.25, 0.25, 1.);
+    vec3 pointLightDir = v_worldPos - u_pointLightPos;
+    float pointLightDist = length(pointLightDir);
+    float att = max((u_pointLightRange - pointLightDist) / u_pointLightRange, 0.);
+    
+    pointLightDir = normalize(-pointLightDir);
+    float NdotL = max(dot(v_worldNormal, pointLightDir), 0.);
+    
+    vec4 final_col =  v_vColour * texture2D( gm_BaseTexture, v_vTexcoord ) * vec4(min(lightAmbient + att * lightColor * NdotL, vec4(1.)).rgb, 1.);
 	
+	*/
+	
+	// shadow stuff
 	vec4 sampledDepthColor = texture2D(s_DepthTexture, v_ShadowTexcoord);
 	float depthValue = depthFromColor(sampledDepthColor.rgb);
 	
@@ -66,10 +86,7 @@ void main()
 	if(final_col.a < 0.1)
 		discard;
 	
-	//final_col *= 2.;// high exposure
-	
-	gl_FragData[0] = vec4(final_col.rgb*0.5, 1.);
-	//gl_FragData[0] = final_col;
+	gl_FragData[0] = vec4(final_col.rgb*.4, 1.);
 	gl_FragData[1] = vec4(v_depth, 0., 0., 1.);
 	
 }
