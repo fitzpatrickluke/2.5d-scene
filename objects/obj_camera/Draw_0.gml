@@ -40,7 +40,7 @@ shader_set(shader_light);
 shader_set_uniform_f_array(shader_get_uniform(shader_light,"u_lightViewMap"), light_view_mat);
 shader_set_uniform_f_array(shader_get_uniform(shader_light,"u_lightProjMap"), light_proj_mat);
 texture_set_stage(shader_get_sampler_index(shader_light, "s_DepthTexture"), surface_get_texture(shadowmap_surface));
-shader_set_uniform_f(shader_get_uniform(shader_light,"u_lightDirection"), sun_dx, sun_dz, sun_dy);
+shader_set_uniform_f(shader_get_uniform(shader_light,"u_lightDirection"), sun_dx, sun_dz, -sun_dy);
 surface_set_target(surface_1);
 surface_set_target_ext(1, surf_depth)
 
@@ -63,10 +63,20 @@ camera_apply(camera);
 
 
 with(obj_ground) {event_perform(ev_draw, 0);}
-
-with(obj_floor) {event_perform(ev_draw, 0);}
+//with(obj_floor) {event_perform(ev_draw, 0);}
 with(obj_tree) {event_perform(ev_draw, 0);}
 
+gpu_set_tex_filter(true);
+gpu_set_tex_repeat(true);
+shader_set(shd_water);
+var displacement_sampler = shader_get_sampler_index(shd_water, "displacementMap");
+texture_set_stage(displacement_sampler, sprite_get_texture(spr_tex_water, 0));
+var time_uniform = shader_get_uniform(shd_water, "time");
+shader_set_uniform_f(time_uniform, current_time / 1000);
+with(obj_floor) {event_perform(ev_draw, 0);}
+shader_reset();
+gpu_set_tex_filter(false);
+gpu_set_tex_repeat(false);
 
 shader_reset();
 
@@ -75,7 +85,9 @@ shader_reset();
 //gpu_set_alphatestref(10)
 //with(obj_tree) {event_perform(ev_draw, 0);}
 
+
 with(obj_player) {event_perform(ev_draw, 0);}
+
 
 
 surface_reset_target();
@@ -103,8 +115,10 @@ shader_set(shd_blur_v);
 shader_set_uniform_f(shader_get_uniform(shd_blur_v, "texture_size"), surf_width, surf_height);
 shader_set_uniform_f(shader_get_uniform(shd_blur_v, "blur_radius"), 10);
 draw_surface(surf_blur_h, 0, 0);
-surface_reset_target();
 shader_reset();
+
+surface_reset_target();
+
 
 /*
 shader_set(Shader3);

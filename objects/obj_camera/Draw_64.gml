@@ -16,3 +16,6 @@ shader_reset();
 
 
 
+
+//draw_surface(surface_1, 0, 0)
+

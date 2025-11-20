@@ -19,7 +19,7 @@ surface_2 = -1;
 layer_force_draw_depth(true, 0);
 
 sun_x = 0;
-sun_y = 640;
+sun_y = 200;//640;
 sun_z = 400;
 
 sun_dx = 1.0; 
