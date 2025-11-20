@@ -62,10 +62,10 @@ void main()
 
 	
 	//final_col *= 2.;// high exposure
-
 	
 	gl_FragData[0] = final_col;
 	gl_FragData[1] = vec4(v_depth, 0., 0., 1.);
+	
 }
 
 
