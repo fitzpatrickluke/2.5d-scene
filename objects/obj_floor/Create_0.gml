@@ -11,6 +11,6 @@ zz = 0;
 
 vertex_begin(v_buffer, vertex_format);
 
-vertex_set_floor(v_buffer, 0, 0, zz, 432, 336);
+vertex_set_floor(v_buffer, 0, 0, zz, room_width, room_height);
 
 vertex_end(v_buffer);

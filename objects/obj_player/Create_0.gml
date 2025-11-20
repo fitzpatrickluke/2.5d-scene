@@ -5,14 +5,24 @@ alarm[0] = 15;
 
 zz = 0;
 
-spr_width = 48;
-spr_height = 48;
 
-c_top = make_color_rgb(spr_height, 0, 0);
-c_bot = make_color_rgb(0, 0, 0);
+/*
+vertex_format_begin();
+vertex_format_add_position_3d();
+vertex_format_add_normal();
+vertex_format_add_texcoord();
+vertex_format_add_color();
+vertex_format = vertex_format_end();
 
-c_top_2 = make_color_rgb(0, spr_height, 0);
+v_buffer = vertex_create_buffer();
 
-c_top_3 = make_color_rgb(0, 0, spr_height);
+zz = 0;
+
+vertex_begin(v_buffer, vertex_format);
+
+vertex_set_wall(v_buffer, x, y, zz, 24, 32, 24);
+
+vertex_end(v_buffer);
+*/
 
 

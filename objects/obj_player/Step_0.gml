@@ -39,6 +39,8 @@ else if(keyboard_check(vk_right) || keyboard_check(ord("D"))) {
 	x += spd;
 	curr_dir = 2;
 	max_frame = 1;
+	
+	//obj_sky.x += 48;
 
 }
 else if(keyboard_check(vk_left) || keyboard_check(ord("A"))) {
@@ -51,6 +53,8 @@ else if(keyboard_check(vk_left) || keyboard_check(ord("A"))) {
 	x -= spd;
 	curr_dir = 3;
 	max_frame = 1;
+	
+	//obj_sky.x -= 48;
 
 }
 else {

@@ -4,6 +4,7 @@
 var camera = camera_get_active();
 
 #region
+
 shader_set(shader_depth);
 surface_set_target(shadowmap_surface);
 draw_clear(c_black);
@@ -39,6 +40,7 @@ shader_set(shader_light);
 shader_set_uniform_f_array(shader_get_uniform(shader_light,"u_lightViewMap"), light_view_mat);
 shader_set_uniform_f_array(shader_get_uniform(shader_light,"u_lightProjMap"), light_proj_mat);
 texture_set_stage(shader_get_sampler_index(shader_light, "s_DepthTexture"), surface_get_texture(shadowmap_surface));
+shader_set_uniform_f(shader_get_uniform(shader_light,"u_lightDirection"), sun_dx, sun_dz, sun_dy);
 surface_set_target(surface_1);
 surface_set_target_ext(1, surf_depth)
 
@@ -64,7 +66,9 @@ with(obj_ground) {event_perform(ev_draw, 0);}
 
 with(obj_floor) {event_perform(ev_draw, 0);}
 
+
 shader_reset();
+
 
 gpu_set_alphatestenable(true);
 gpu_set_alphatestref(10)

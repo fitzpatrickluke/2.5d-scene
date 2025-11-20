@@ -11,6 +11,7 @@ varying vec2 v_ShadowTexcoord;
 varying float v_depth;
 
 uniform sampler2D s_DepthTexture;
+uniform vec3 u_lightDirection;
 
 const vec3 UNDO = vec3(1.0, 256.0, 65536.0) / 16777215.0 * 255.0;
 float depthFromColor(vec3 color) {
@@ -22,7 +23,9 @@ void main()
 	float ambient = 0.2;
 	vec4 lightColor = vec4(1., 5., 5., 1.);
 	//vec3 lightDirection = -normalize(vec3(.5, -1., 0.5));
-	vec3 lightDirection = -normalize(vec3(1., -1., -1.));
+	//vec3 lightDirection = -normalize(vec3(1., -1., -1.));
+	
+	vec3 lightDirection = -normalize(vec3(u_lightDirection));
 	
 	float NdotL = max(dot(v_worldNormal, lightDirection), 0.) + ambient;
 	
