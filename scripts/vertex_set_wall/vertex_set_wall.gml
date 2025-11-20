@@ -21,7 +21,7 @@ function vertex_set_wall(argument0, argument1, argument2, argument3, argument4, 
 	var x2 = xx;
 	var z1 = zz;
 	var z2 = zz+hh;
-	var y2 = yy-argument6 // account for camera tilt
+	var y2 = yy//-argument6 // account for camera tilt
 	
 	var y3 = y2-10;
 	var y4 = y1-10;

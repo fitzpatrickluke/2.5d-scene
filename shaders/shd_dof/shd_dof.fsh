@@ -13,11 +13,13 @@ void main()
     vec4 color_main = texture2D(gm_BaseTexture, v_vTexcoord);
     vec4 color_blur = texture2D(sampBlur, v_vTexcoord);
     float depth_value = texture2D(sampDepth, v_vTexcoord).r;
-    
-	//if(depth_value > u_near  && depth_value < u_far)
-	//	gl_FragColor = color_main;
-	
-	//float depth_under_crosshairs = clamp(texture2D(sampDepth, vec2(0.5, 0.5)).r, 10.0, 1000.0);
+    /*
+	if(depth_value > u_near  && depth_value < u_far)
+		gl_FragColor = color_blur;
+	else
+		gl_FragColor = color_main;
+	*/
+	float depth_under_crosshairs = clamp(texture2D(sampDepth, vec2(0.5, 0.5)).r, 10.0, 1000.0);
     
     float blur_amount = smoothstep(u_near, u_far, abs(depth_value-u_focus));
     gl_FragColor = mix(color_main, color_blur, blur_amount);

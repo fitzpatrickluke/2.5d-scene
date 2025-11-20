@@ -11,6 +11,6 @@ v_buffer = vertex_create_buffer();
 
 vertex_begin(v_buffer, vertex_format);
 
-vertex_set_wall(v_buffer, 960, 0, 0, 24*57, 24*57, 64);
+vertex_set_wall(v_buffer, 1300, 0, 0, 24*75, 24*75, 64);
 
 vertex_end(v_buffer);

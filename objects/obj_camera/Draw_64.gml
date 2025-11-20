@@ -10,7 +10,7 @@ shader_set_uniform_f(shader_get_uniform(shd_dof, "u_focus"), 240.);
 
 
 draw_surface(surface_1, 0, 0)
-//draw_surface(shadowmap_surface, -600, -600)
+//draw_surface(shadowmap_surface, 0, -600)
 
 shader_reset();
 

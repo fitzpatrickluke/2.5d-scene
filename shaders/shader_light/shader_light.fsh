@@ -63,6 +63,8 @@ void main()
 
 	final_col.rgb *= 1.0 - shadow;
 
+	if(final_col.a < 0.1)
+		discard;
 	
 	//final_col *= 2.;// high exposure
 	

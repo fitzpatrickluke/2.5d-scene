@@ -4,11 +4,15 @@
 
 shadow_tex_ww = 2048;
 shadow_tex_hh = 2048;
+
+shadow_tex_surf_ww = power(2, 10)
+shadow_tex_surf_hh = power(2, 10)
+shadowmap_surface = surface_create(2048, 2048);
+/*
 shadow_tex_surf_ww = power(2, 11)
 shadow_tex_surf_hh = power(2, 11)
-
 shadowmap_surface = surface_create(2048*2, 2048*2);
-
+*/
 surface_1 = -1;
 surface_2 = -1;
 
