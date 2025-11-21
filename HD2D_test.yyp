@@ -27,7 +27,10 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"bridge_lowpoly.obj","CopyToMask":-1,"filePath":"datafiles","name":"bridge_lowpoly.obj","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"Most.obj","CopyToMask":-1,"filePath":"datafiles","name":"Most.obj","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
@@ -35,6 +38,7 @@
   },
   "name":"HD2D_test",
   "resources":[
+    {"id":{"name":"obj_bridge","path":"objects/obj_bridge/obj_bridge.yy",},},
     {"id":{"name":"obj_bush","path":"objects/obj_bush/obj_bush.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_floor","path":"objects/obj_floor/obj_floor.yy",},},
@@ -45,6 +49,7 @@
     {"id":{"name":"obj_tree","path":"objects/obj_tree/obj_tree.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},},
+    {"id":{"name":"import_obj","path":"scripts/import_obj/import_obj.yy",},},
     {"id":{"name":"vertex_add_point","path":"scripts/vertex_add_point/vertex_add_point.yy",},},
     {"id":{"name":"vertex_set_cube_round","path":"scripts/vertex_set_cube_round/vertex_set_cube_round.yy",},},
     {"id":{"name":"vertex_set_cube","path":"scripts/vertex_set_cube/vertex_set_cube.yy",},},
@@ -62,6 +67,7 @@
     {"id":{"name":"shd_dof","path":"shaders/shd_dof/shd_dof.yy",},},
     {"id":{"name":"shd_water","path":"shaders/shd_water/shd_water.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
+    {"id":{"name":"spr_tex_bridge","path":"sprites/spr_tex_bridge/spr_tex_bridge.yy",},},
     {"id":{"name":"spr_tex_bush","path":"sprites/spr_tex_bush/spr_tex_bush.yy",},},
     {"id":{"name":"spr_tex_ground","path":"sprites/spr_tex_ground/spr_tex_ground.yy",},},
     {"id":{"name":"spr_tex_leaf","path":"sprites/spr_tex_leaf/spr_tex_leaf.yy",},},
