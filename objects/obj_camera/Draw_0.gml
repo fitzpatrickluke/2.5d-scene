@@ -29,7 +29,6 @@ with(obj_tree) {event_perform(ev_draw, 0);}
 with(obj_floor) {event_perform(ev_draw, 0);}
 with(obj_player) {event_perform(ev_draw, 0);}
 
-
 shader_reset();
 surface_reset_target();
 
@@ -66,23 +65,29 @@ camera_apply(camera);
 
 
 with(obj_ground) {event_perform(ev_draw, 0);}
-with(obj_floor) {event_perform(ev_draw, 0);}
+//with(obj_floor) {event_perform(ev_draw, 0);}
 with(obj_tree) {event_perform(ev_draw, 0);}
+shader_reset();
 
-/*
 gpu_set_tex_filter(true);
 gpu_set_tex_repeat(true);
 shader_set(shd_water);
 var displacement_sampler = shader_get_sampler_index(shd_water, "displacementMap");
-texture_set_stage(displacement_sampler, sprite_get_texture(spr_tex_water, 0));
+texture_set_stage(displacement_sampler, sprite_get_texture(spr_tex_water_1, 0));
 var time_uniform = shader_get_uniform(shd_water, "time");
 shader_set_uniform_f(time_uniform, current_time / 1000);
+shader_set_uniform_f_array(shader_get_uniform(shd_water,"u_lightViewMap"), light_view_mat);
+shader_set_uniform_f_array(shader_get_uniform(shd_water,"u_lightProjMap"), light_proj_mat);
+texture_set_stage(shader_get_sampler_index(shd_water, "s_DepthTexture"), surface_get_texture(shadowmap_surface));
+shader_set_uniform_f(shader_get_uniform(shd_water,"u_lightDirection"), sun_dx, sun_dz, -sun_dy);
+shader_set_uniform_f(shader_get_uniform(shd_water,"u_pointLightPos"), 400., -100, -100.);
+shader_set_uniform_f(shader_get_uniform(shd_water,"u_pointLightRange"), 20.);
 with(obj_floor) {event_perform(ev_draw, 0);}
 shader_reset();
 gpu_set_tex_filter(false);
 gpu_set_tex_repeat(false);
-*/
-shader_reset();
+
+
 
 
 //gpu_set_alphatestenable(true);

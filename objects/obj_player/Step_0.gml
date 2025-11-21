@@ -1,4 +1,4 @@
-
+/*
 if(place_meeting(x,y, obj_ground)) {
 	var oo = instance_place(x, y, obj_ground)
 	zz = 24+oo.land_oz;
@@ -6,7 +6,7 @@ if(place_meeting(x,y, obj_ground)) {
 else
 	zz = -4;
 	
-	
+	*/
 var spd = 2;
 
 if(keyboard_check(vk_down) || keyboard_check(ord("S"))) {
