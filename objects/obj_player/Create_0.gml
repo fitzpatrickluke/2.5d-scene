@@ -5,28 +5,30 @@ alarm[0] = 15;
 
 zz = 0;
 
+grid_size = 1;
+var ww = room_height/grid_size+1;
+var hh = room_width/grid_size+1;
 
-var ww = 18+1;
-var hh = 14+1;
-grid_size = 24;
 height_map = ds_grid_create(ww, hh);
 // ww -> y, hh -> x
+var br = 4;
+var bb = 1;
+var br_m = bb;
 for(var i = 0; i < ww; i+=1) {
 	for(var j = 0; j < hh; j+=1) {
 		height_map[# i, j] = 4;
-		if(j > 4 && j < 10)
-			height_map[# i, j] = 12;
+		if(j > 144 && j < 240) {
+			br += sin(br_m)*0.5
+			height_map[# i, j] = br;
+			if(j == 144+96/2)
+				br_m = bb*-1;
+		}
 	}
+	br = 4;
+	br_m = bb;
 }
-var ss = "";
-for(var i = 0; i < ww; i+=1) {
-	for(var j = 0; j < hh; j+=1) {
-		ss += string(height_map[# i, j]) + " ";
-	}
-	ss += "\n"
-	show_debug_message(ss);
-	ss = "";
-}
+// 10 11 12 | 13 14 15 16 | 17 18 19 
+
 /*
 vertex_format_begin();
 vertex_format_add_position_3d();
