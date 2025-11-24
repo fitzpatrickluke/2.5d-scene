@@ -26,21 +26,35 @@ void main()
 	/////////////// BLOOM
 	finalCol += color_bloom*0.5;
 	
+	//////// CHROMATIC ABBERATION
+	// not working too much cant seem to fully get working
+	/*
+	float direction_r = v_vTexcoord.x - 0.01;
+	float direction_g = v_vTexcoord.x + 0.01;
+	float direction_b = v_vTexcoord.y - 0.01;
+	finalCol.r += (direction_r * 0.09);
+	finalCol.g += (direction_g * 0.06);
+	finalCol.b += (direction_b * -0.06);
+	*/
+	
 	////////////// COLOR GRADING
 	float u_warmth = 1.;
 	finalCol.r += u_warmth * 0.1; 
     finalCol.g += u_warmth * 0.05;
     finalCol.b -= u_warmth * 0.05;
     finalCol = clamp(finalCol, 0.0, 1.0);
+	
 	////////////// VIGNETTE
 	vec2 center = vec2(0.5, 0.5);
     float dist = distance(v_vTexcoord, center);
-    float vignette = smoothstep(0.4, 0.9, dist);
+    float vignette = smoothstep(0.1, 0.9, dist);
     finalCol.rgb *= mix(1.0, 0.1, vignette);
 
 	///////////// CONTRAST AND EXPOSURE
 	finalCol.rgb = ((finalCol.rgb - 0.5) * 1.4) + 0.5;
 	finalCol.rgb *= 1.2;
+	
+
 	
     gl_FragColor = finalCol;
 

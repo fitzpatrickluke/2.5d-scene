@@ -13,5 +13,14 @@ draw_surface(surface_1, 0, 0)
 
 shader_reset();
 
-//draw_surface(shadowmap_surface, 0, -600)
+
+shader_set(shd_godRays);
+
+draw_surface(surface_1, 0, 0);
+shader_reset();
+
+
+
+
+//draw_surface(surf_foamMask, 0, 0)
 //draw_surface(surface_1, 0, 0)

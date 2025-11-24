@@ -66,11 +66,12 @@ camera_apply(camera);
 
 
 with(obj_ground) {event_perform(ev_draw, 0);}
-with(obj_floor) {event_perform(ev_draw, 0);}
+//with(obj_floor) {event_perform(ev_draw, 0);}
 with(obj_tree) {event_perform(ev_draw, 0);}
 with(obj_player) {event_perform(ev_draw, 0);}
 shader_reset();
 
+// water movement and foam
 gpu_set_tex_filter(true);
 gpu_set_tex_repeat(true);
 shader_set(shd_water);
