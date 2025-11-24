@@ -16,12 +16,7 @@ void main()
     vec4 color_blur = texture2D(sampBlur, v_vTexcoord);
 	vec4 color_bloom = texture2D(sampBlur, v_vTexcoord);
     float depth_value = texture2D(sampDepth, v_vTexcoord).r;
-    /*
-	if(depth_value > u_near  && depth_value < u_far)
-		gl_FragColor = color_blur;
-	else
-		gl_FragColor = color_main;
-	*/
+
 	float depth_under_crosshairs = clamp(texture2D(sampDepth, vec2(0.5, 0.5)).r, 10.0, 1000.0);
     
     float blur_amount = smoothstep(u_near, u_far, abs(depth_value-u_focus));
@@ -31,20 +26,21 @@ void main()
 	/////////////// BLOOM
 	finalCol += color_bloom*0.5;
 	
-		////////////// COLOR GRADING
+	////////////// COLOR GRADING
 	float u_warmth = 1.;
 	finalCol.r += u_warmth * 0.1; 
     finalCol.g += u_warmth * 0.05;
     finalCol.b -= u_warmth * 0.05;
     finalCol = clamp(finalCol, 0.0, 1.0);
-	
 	////////////// VIGNETTE
 	vec2 center = vec2(0.5, 0.5);
     float dist = distance(v_vTexcoord, center);
     float vignette = smoothstep(0.4, 0.9, dist);
     finalCol.rgb *= mix(1.0, 0.1, vignette);
-	
 
+	///////////// CONTRAST AND EXPOSURE
+	finalCol.rgb = ((finalCol.rgb - 0.5) * 1.4) + 0.5;
+	finalCol.rgb *= 1.2;
 	
     gl_FragColor = finalCol;
 

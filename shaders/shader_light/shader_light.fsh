@@ -29,7 +29,7 @@ void main()
 	// directional light stuff
 	
 	float ambient = 0.2;
-	vec4 lightColor = vec4(1., 5., 5., 1.);
+	vec4 lightColor = vec4(1., 1., 1., 1.);
 	
 	vec3 lightDirection = -normalize(vec3(u_lightDirection));
 	
@@ -82,6 +82,9 @@ void main()
 	shadow /= 25.;
 
 	final_col.rgb *= 1.0 - shadow;
+	
+	// very dark if don't increase
+	final_col.rgb *= 4.;
 
 	if(final_col.a < 0.1)
 		discard;

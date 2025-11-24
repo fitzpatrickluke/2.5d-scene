@@ -60,7 +60,6 @@
     {"id":{"name":"shader_depth","path":"shaders/shader_depth/shader_depth.yy",},},
     {"id":{"name":"shader_light","path":"shaders/shader_light/shader_light.yy",},},
     {"id":{"name":"Shader3","path":"shaders/Shader3/Shader3.yy",},},
-    {"id":{"name":"shd_bloom_final","path":"shaders/shd_bloom_final/shd_bloom_final.yy",},},
     {"id":{"name":"shd_bloom","path":"shaders/shd_bloom/shd_bloom.yy",},},
     {"id":{"name":"shd_blur_h","path":"shaders/shd_blur_h/shd_blur_h.yy",},},
     {"id":{"name":"shd_blur_v","path":"shaders/shd_blur_v/shd_blur_v.yy",},},

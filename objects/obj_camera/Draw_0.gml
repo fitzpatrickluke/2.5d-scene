@@ -3,8 +3,8 @@
 
 var camera = camera_get_active();
 
+// shadows
 #region
-
 shader_set(shader_depth);
 surface_set_target(shadowmap_surface);
 draw_clear(c_black);
@@ -34,6 +34,7 @@ surface_reset_target();
 
 #endregion
 
+// sprites and objects
 #region
 
 shader_set(shader_light);
@@ -67,6 +68,7 @@ camera_apply(camera);
 with(obj_ground) {event_perform(ev_draw, 0);}
 with(obj_floor) {event_perform(ev_draw, 0);}
 with(obj_tree) {event_perform(ev_draw, 0);}
+with(obj_player) {event_perform(ev_draw, 0);}
 shader_reset();
 
 gpu_set_tex_filter(true);
@@ -95,7 +97,7 @@ gpu_set_tex_repeat(false);
 //with(obj_tree) {event_perform(ev_draw, 0);}
 
 
-with(obj_player) {event_perform(ev_draw, 0);}
+
 
 
 
@@ -105,6 +107,8 @@ surface_reset_target();
 
 
 // DOF
+#region
+
 var surf_width = surface_get_width(application_surface);
 var surf_height = surface_get_height(application_surface);
 
@@ -128,9 +132,10 @@ draw_surface(surf_blur_h, 0, 0);
 shader_reset();
 
 surface_reset_target();
-
+#endregion
 
 // BLOOM
+#region
 surface_set_target(surf_bloom);
 draw_clear(c_black);
 shader_set(shd_bloom);
@@ -159,6 +164,7 @@ draw_surface(surf_bloom_blur_h, 0, 0);
 shader_reset();
 
 surface_reset_target();
+#endregion
 
 
 /*
