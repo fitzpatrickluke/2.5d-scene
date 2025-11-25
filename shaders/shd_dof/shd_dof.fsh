@@ -52,7 +52,7 @@ void main()
 
 	///////////// CONTRAST AND EXPOSURE
 	finalCol.rgb = ((finalCol.rgb - 0.5) * 1.4) + 0.5;
-	finalCol.rgb *= 1.2;
+	//finalCol.rgb *= 1.2
 	
 
 	

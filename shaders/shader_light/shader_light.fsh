@@ -63,7 +63,7 @@ void main()
     }
 	*/
 	
-	float bias = 0.0;//1;
+	float bias = 0.0001;//1;
 	float shadow = 0.0;
 	vec2 texelSize = vec2(1.0 / 1024.0);
 	for(int x = -2; x <= 2; x+=1)
