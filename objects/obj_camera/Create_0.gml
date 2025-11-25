@@ -1,7 +1,5 @@
 
 
-
-
 shadow_tex_ww = 2048;
 shadow_tex_hh = 2048;
 
@@ -26,6 +24,7 @@ sun_dx = 1.0;
 sun_dy = -1.0; 
 sun_dz = -1.0; 
 
+// surfaces
 surf_blur_h = surface_create(window_get_width(), window_get_height());
 surf_blur = surface_create(window_get_width(), window_get_height());
 surf_depth = surface_create(window_get_width(), window_get_height(), surface_r32float);

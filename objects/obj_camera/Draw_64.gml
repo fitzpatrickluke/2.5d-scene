@@ -21,6 +21,5 @@ shader_reset();
 
 
 
-
 //draw_surface(surf_foamMask, 0, 0)
 //draw_surface(surface_1, 0, 0)
