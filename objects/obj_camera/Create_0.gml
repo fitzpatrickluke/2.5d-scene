@@ -1,4 +1,7 @@
 
+audio_play_sound(Sound1, 1, true);
+audio_play_sound(Sound3, 1, true, 0.4);
+music_playing = false;
 
 shadow_tex_ww = 2048;
 shadow_tex_hh = 2048;

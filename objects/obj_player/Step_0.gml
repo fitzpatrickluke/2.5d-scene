@@ -31,7 +31,6 @@ else if(keyboard_check(vk_up) || keyboard_check(ord("W"))) {
 }
 else if(keyboard_check(vk_right) || keyboard_check(ord("D"))) {
 
-	
 	var lay_id = layer_get_id("Tiles_1");
 	var map_id = layer_tilemap_get_id(lay_id);
 	if(place_meeting(x+spd,y,map_id))
@@ -45,7 +44,6 @@ else if(keyboard_check(vk_right) || keyboard_check(ord("D"))) {
 }
 else if(keyboard_check(vk_left) || keyboard_check(ord("A"))) {
 
-
 	var lay_id = layer_get_id("Tiles_1");
 	var map_id = layer_tilemap_get_id(lay_id);
 	if(place_meeting(x-spd,y,map_id))
@@ -58,6 +56,7 @@ else if(keyboard_check(vk_left) || keyboard_check(ord("A"))) {
 
 }
 else {
+
 	curr_dir = 4;
 	//curr_frame = 0;
 	max_frame = 3;

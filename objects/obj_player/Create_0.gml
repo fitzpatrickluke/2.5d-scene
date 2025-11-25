@@ -3,6 +3,8 @@ curr_frame = 0;
 max_frame = 1;
 alarm[0] = 15;
 
+flutter_on = false;
+
 zz = 0;
 
 grid_size = 1;

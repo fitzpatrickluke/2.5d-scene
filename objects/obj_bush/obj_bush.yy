@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_tex_bush",
-    "path":"sprites/spr_tex_bush/spr_tex_bush.yy",
+    "name":"Sprite18",
+    "path":"sprites/Sprite18/Sprite18.yy",
   },
   "spriteMaskId":null,
   "visible":false,
