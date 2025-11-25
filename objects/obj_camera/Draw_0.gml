@@ -47,7 +47,7 @@ shader_set_uniform_f(shader_get_uniform(shader_light,"u_pointLightRange"), 20.);
 surface_set_target(surface_1);
 surface_set_target_ext(1, surf_depth)
 
-draw_clear(c_white);
+draw_clear(make_color_rgb(126, 189, 242));
 
 // pov player
 var x_to = obj_player.x;
@@ -76,7 +76,7 @@ gpu_set_tex_filter(true);
 gpu_set_tex_repeat(true);
 shader_set(shd_water);
 var displacement_sampler = shader_get_sampler_index(shd_water, "displacementMap");
-texture_set_stage(displacement_sampler, sprite_get_texture(spr_tex_water_1, 0));
+texture_set_stage(displacement_sampler, sprite_get_texture(Sprite13, 0));
 var time_uniform = shader_get_uniform(shd_water, "time");
 shader_set_uniform_f(time_uniform, current_time / 1000);
 shader_set_uniform_f_array(shader_get_uniform(shd_water,"u_lightViewMap"), light_view_mat);
