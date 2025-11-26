@@ -24,12 +24,12 @@ sun_y = 200;//640;
 sun_z = 400;
 
 sun_dx = 1.0; 
-sun_dy = -1
+sun_dy = -0.5
 sun_dz = -1.0; 
 
 sun_spd_const = 0.0005;
 sun_dx_spd = -1*sun_spd_const;
-sun_dy_spd = -1*sun_spd_const;
+sun_dy_spd = -1*sun_spd_const/4
 
 
 // surfaces
