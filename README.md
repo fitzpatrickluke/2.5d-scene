@@ -17,5 +17,7 @@ Going into this I did not realize how manu new graphics topics I would have to l
 This also is just a bit more low level then I'm used to working with. I've been using a lot of shaders. But another big thing was learning how 3d shapes are made. I physically sketched out vertices on paper and how they would form cubes. So the 3d shapes are all made via code, line by line. Is this the best way for 3d shapes, probably not, but it was a good learning experience that eased me into how everything worked. 
 
 Also most of the code I didn't write but more so found online and took some time understanding how it worked.
+
+I'd say if you wanted to take a look at the code, the bulk of its is in the objects folder in obj_camera and everything in the shaders folder.
 *************************************************************************************
 
