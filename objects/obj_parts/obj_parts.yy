@@ -11,8 +11,8 @@
   "name":"obj_parts",
   "overriddenProperties":[],
   "parent":{
-    "name":"unused",
-    "path":"folders/Objects/unused.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

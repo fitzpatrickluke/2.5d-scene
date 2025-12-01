@@ -37,8 +37,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_deer_1",
-    "path":"sprites/spr_deer_1/spr_deer_1.yy",
+    "name":"deer",
+    "path":"sprites/deer/deer.yy",
   },
   "spriteMaskId":null,
   "visible":false,

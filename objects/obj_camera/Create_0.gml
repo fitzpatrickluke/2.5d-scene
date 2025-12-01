@@ -1,6 +1,6 @@
 
-audio_play_sound(sound_river, 1, true);
-audio_play_sound(sound_forest, 1, true, 0.4);
+audio_play_sound(Sound1, 1, true);
+audio_play_sound(Sound3, 1, true, 0.4);
 music_playing = false;
 
 shadow_tex_ww = 2048;
@@ -9,6 +9,11 @@ shadow_tex_hh = 2048;
 shadow_tex_surf_ww = power(2, 10)
 shadow_tex_surf_hh = power(2, 10)
 shadowmap_surface = surface_create(2048, 2048);
+/*
+shadow_tex_surf_ww = power(2, 11)
+shadow_tex_surf_hh = power(2, 11)
+shadowmap_surface = surface_create(2048*2, 2048*2);
+*/
 surface_1 = -1;
 surface_2 = -1;
 

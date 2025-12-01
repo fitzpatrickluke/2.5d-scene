@@ -23,10 +23,11 @@ float depthFromColor(vec3 color) {
 }
 
 void main() {
-	/////////////// SHADOWS
+	
+	///////////// SHADOWS
 	vec4 sampledDepthColor = texture2D(s_DepthTexture, v_ShadowTexcoord);
 	float depthValue = depthFromColor(sampledDepthColor.rgb);
-	vec4 final_col =  v_vColour;
+	vec4 final_col =  v_vColour;// * texture2D(gm_BaseTexture, v_vTexcoord + offset);
 	float bias = 0.01;
 	float shadow = 0.0;
 	vec2 texelSize = vec2(1.0 / 1024.0);
@@ -46,7 +47,8 @@ void main() {
 	shadow /= 25.;
 	final_col.rgb *= 1.0 - shadow*0.5;
 	
-	/////////////// MOVING EFFECT
+	
+	////// WATER
 	vec2 time_offset = vec2(time, -time / 2.0) / 4.0;
     
     vec4 displace = texture2D(displacementMap, v_vTexcoord + time_offset);
@@ -55,7 +57,9 @@ void main() {
 	
 	final_col =  final_col * texture2D(gm_BaseTexture, v_vTexcoord + offset);
 	
-	/////////////// SET COLOR
+	
+	
+    //gl_FragColor = 
 	gl_FragData[0] = final_col;
 	gl_FragData[1] = vec4(v_depth, 0., 0., 1.);
 }

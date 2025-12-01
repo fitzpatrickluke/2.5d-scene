@@ -13,7 +13,7 @@ zz = 0;
 alarm[0] = 1;
 
 
-spr_tex = spr_tree_3;
+spr_tex = Sprite21;
 spr_tex_w = sprite_get_width(spr_tex);
 spr_tex_h = sprite_get_height(spr_tex);
 curr_frame = 0;
@@ -23,13 +23,13 @@ anim_time = 6;
 var rr = irandom(2);
 switch(rr) {
 	case 1:
-	spr_tex = spr_tree_1;
+	spr_tex = Sprite16;
 spr_tex_w = sprite_get_width(spr_tex);
 spr_tex_h = sprite_get_height(spr_tex);
 max_frame = 22;
 	break;
 	case 2:
-	spr_tex = spr_tree_2;
+	spr_tex = Sprite17;
 spr_tex_w = sprite_get_width(spr_tex);
 spr_tex_h = sprite_get_height(spr_tex);
 max_frame = 15;

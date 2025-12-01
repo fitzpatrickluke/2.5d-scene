@@ -8,9 +8,7 @@
 /// @param offset_z
 /// @param offset_r
 
-function vertex_set_cube_round(argument0, argument1, argument2, argument3, argument4, argument5,
-argument6, argument7, argument8){
-	
+function vertex_set_cube_round(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8){
 	var vbuffer = argument0;
 	var xx = argument1;
 	var yy = argument2;
@@ -98,6 +96,13 @@ argument6, argument7, argument8){
 	vertex_add_point(v_buffer, x3, y4, z3, 0, 1, 0, 0, 1, c_white, 1); // BR
 	vertex_add_point(v_buffer, x4, y4, z3, 0, 1, 0, 1, 1, c_white, 1); // BL
 	
+	
+
+
+	
+
+
+
 }
 
 

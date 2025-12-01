@@ -15,7 +15,7 @@ if(alert_run) {
 }
 	
 
-if((obj_player.x < x+alert_range && obj_player.x > x-alert_range-spr_tex_w) && !alert_run)
+if((obj_player.x < x+alert_run && obj_player.x > x-alert_run-spr_tex_w) && !alert_run)
 {
 	alert_run = true;
 	spr_tex = spr_tex_run;
