@@ -2,7 +2,11 @@
 
 *************************************************************************************
 Video week2:
+
+https://drive.google.com/file/d/132ddEMuopnsDrNGS3j3R9upW0WzugyAJ/view?usp=sharing
+
 Video week1:
+
 https://drive.google.com/file/d/15TaiStUJfceNYtZCc51U6uIk9-BG3bvn/view?usp=sharing
 
 *************************************************************************************
@@ -20,7 +24,7 @@ Going into this I did not realize how many new graphics topics I would have to l
 This also is just a bit more low level then I'm used to working with. I've been using a lot of shaders. But another big thing was learning how 3d shapes are made. I physically sketched out vertices on paper and how they would form cubes. So the 3d shapes are all made via code, line by line. However, then when I got to the point of importing .obj files I found online, I had a stronger understanding of what was going on in the backend.
 
 As of 12/1/2025 the project is nearly complete. The last thing I want to try out is updating the shadows, right now they are just all rectangles. I want the shadows to be more tree shapes, or more player shapes, etc. I think to achieve this I'll have to change what I draw on the shadow object, have a tree 3d model instead of a flat wall. But then keep the flat wall shape for the surface where I draw all the sprites.
-Also most of the code I didn't write but more so found online and took some time understanding how it worked.
+Also most of the code I didn't write but more so found online and took some time understanding how it worked. There is also a small bug with the direction of the player I need to fix.
 
 I'd say if you wanted to take a look at the code, the bulk of its is in the objects folder in obj_camera. Most of the shaders is code I found online.
 *************************************************************************************
