@@ -27,7 +27,7 @@ I'd say if you wanted to take a look at the code, the bulk of its is in the obje
 ASSET SOURCES
 
 SPRITES:
-Player: Me
+Player: Me\n
 Trees: https://karsiori.itch.io/spruce-tree-pack-pixel-art-animated
 Bushes: https://karsiori.itch.io/free-pixel-art-bush-pack
 Flowers: https://karsiori.itch.io/free-pixel-art-flower-pack
