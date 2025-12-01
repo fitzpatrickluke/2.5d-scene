@@ -16,8 +16,8 @@
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_tree",
-    "path":"objects/obj_tree/obj_tree.yy",
+    "name":"obj_object",
+    "path":"objects/obj_object/obj_object.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
