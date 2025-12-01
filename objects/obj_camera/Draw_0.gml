@@ -63,7 +63,6 @@ camera_apply(camera);
 
 
 with(obj_ground) {event_perform(ev_draw, 0);}
-//with(obj_floor) {event_perform(ev_draw, 0);}
 with(obj_tree) {event_perform(ev_draw, 0);}
 with(obj_player) {event_perform(ev_draw, 0);}
 shader_reset();
@@ -86,18 +85,6 @@ with(obj_floor) {event_perform(ev_draw, 0);}
 shader_reset();
 gpu_set_tex_filter(false);
 gpu_set_tex_repeat(false);
-
-
-
-
-//gpu_set_alphatestenable(true);
-//gpu_set_alphatestref(10)
-//with(obj_tree) {event_perform(ev_draw, 0);}
-
-
-
-
-
 
 surface_reset_target();
 
