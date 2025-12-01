@@ -9,7 +9,7 @@ pt = part_type_create();
 
 // Visuals
 //part_type_shape(pt, pt_shape_circle);
-part_type_sprite(pt, Sprite29, 0, 0, 0)
+part_type_sprite(pt, spr_particle, 0, 0, 0)
 part_type_size(pt, 0.5, 2, 0, 0);
 part_type_color1(pt, c_red); // pale yellow & pale blue
 part_type_alpha3(pt, 0, 0.7, 0); // fade in/out

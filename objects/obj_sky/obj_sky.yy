@@ -9,8 +9,8 @@
   "name":"obj_sky",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"unused",
+    "path":"folders/Objects/unused.yy",
   },
   "parentObjectId":{
     "name":"obj_tree",
@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite10",
-    "path":"sprites/Sprite10/Sprite10.yy",
+    "name":"spr_background",
+    "path":"sprites/spr_background/spr_background.yy",
   },
   "spriteMaskId":null,
   "visible":false,

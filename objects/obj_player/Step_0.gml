@@ -18,6 +18,7 @@ if(keyboard_check(vk_down) || keyboard_check(ord("S"))) {
 	y += spd;
 	curr_dir = 0;
 	max_frame = 1;
+		curr_frame = 0;
 }
 else if(keyboard_check(vk_up) || keyboard_check(ord("W"))) {
 	
@@ -28,6 +29,7 @@ else if(keyboard_check(vk_up) || keyboard_check(ord("W"))) {
 	y -= spd;
 	curr_dir = 1;
 	max_frame = 1;
+		curr_frame = 0;
 }
 else if(keyboard_check(vk_right) || keyboard_check(ord("D"))) {
 
@@ -38,6 +40,7 @@ else if(keyboard_check(vk_right) || keyboard_check(ord("D"))) {
 	x += spd;
 	curr_dir = 2;
 	max_frame = 1;
+		curr_frame = 0;
 	
 	//obj_sky.x += 48;
 
@@ -51,6 +54,7 @@ else if(keyboard_check(vk_left) || keyboard_check(ord("A"))) {
 	x -= spd;
 	curr_dir = 3;
 	max_frame = 1;
+	curr_frame = 0;
 	
 	//obj_sky.x -= 48;
 

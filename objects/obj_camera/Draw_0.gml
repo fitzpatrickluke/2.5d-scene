@@ -1,11 +1,9 @@
 
-
-
 var camera = camera_get_active();
 
 // shadows
 #region
-shader_set(shader_depth);
+shader_set(shd_shadowDepth);
 surface_set_target(shadowmap_surface);
 draw_clear(c_black);
 
@@ -36,14 +34,13 @@ surface_reset_target();
 
 // sprites and objects
 #region
-
-shader_set(shader_light);
-shader_set_uniform_f_array(shader_get_uniform(shader_light,"u_lightViewMap"), light_view_mat);
-shader_set_uniform_f_array(shader_get_uniform(shader_light,"u_lightProjMap"), light_proj_mat);
-texture_set_stage(shader_get_sampler_index(shader_light, "s_DepthTexture"), surface_get_texture(shadowmap_surface));
-shader_set_uniform_f(shader_get_uniform(shader_light,"u_lightDirection"), sun_dx, sun_dz, -sun_dy);
-shader_set_uniform_f(shader_get_uniform(shader_light,"u_pointLightPos"), 400., -100, -100.);
-shader_set_uniform_f(shader_get_uniform(shader_light,"u_pointLightRange"), 20.);
+shader_set(shd_light);
+shader_set_uniform_f_array(shader_get_uniform(shd_light,"u_lightViewMap"), light_view_mat);
+shader_set_uniform_f_array(shader_get_uniform(shd_light,"u_lightProjMap"), light_proj_mat);
+texture_set_stage(shader_get_sampler_index(shd_light, "s_DepthTexture"), surface_get_texture(shadowmap_surface));
+shader_set_uniform_f(shader_get_uniform(shd_light,"u_lightDirection"), sun_dx, sun_dz, -sun_dy);
+shader_set_uniform_f(shader_get_uniform(shd_light,"u_pointLightPos"), 400., -100, -100.);
+shader_set_uniform_f(shader_get_uniform(shd_light,"u_pointLightRange"), 20.);
 surface_set_target(surface_1);
 surface_set_target_ext(1, surf_depth)
 
@@ -76,7 +73,7 @@ gpu_set_tex_filter(true);
 gpu_set_tex_repeat(true);
 shader_set(shd_water);
 var displacement_sampler = shader_get_sampler_index(shd_water, "displacementMap");
-texture_set_stage(displacement_sampler, sprite_get_texture(Sprite13, 0));
+texture_set_stage(displacement_sampler, sprite_get_texture(spr_noise, 0));
 var time_uniform = shader_get_uniform(shd_water, "time");
 shader_set_uniform_f(time_uniform, current_time / 1000);
 shader_set_uniform_f_array(shader_get_uniform(shd_water,"u_lightViewMap"), light_view_mat);
@@ -106,10 +103,8 @@ surface_reset_target();
 
 #endregion
 
-
 // DOF
 #region
-
 var surf_width = surface_get_width(application_surface);
 var surf_height = surface_get_height(application_surface);
 
@@ -135,7 +130,7 @@ shader_reset();
 surface_reset_target();
 #endregion
 
-// BLOOM
+// bloom
 #region
 surface_set_target(surf_bloom);
 draw_clear(c_black);
@@ -167,12 +162,3 @@ shader_reset();
 surface_reset_target();
 #endregion
 
-
-/*
-shader_set(Shader3);
-surface_set_target(surface_2);
-draw_clear(c_white);
-draw_surface(surface_1, 0, 0)
-
-surface_reset_target();
-*/

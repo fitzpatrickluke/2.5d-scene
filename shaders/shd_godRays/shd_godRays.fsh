@@ -1,9 +1,8 @@
-// GameMaker Fragment Shader — constants version
+// adapted from: https://godotshaders.com/shader/god-rays/
 
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-// ---- constants ----
 const float ANGLE          = 0.65;
 const float POSITION       = 0.2;
 const float SPREAD         = 0.8;
@@ -18,12 +17,11 @@ const float RAY2_INTENSITY = 0.2;
 
 const vec4  COLOR_VEC      = vec4(1.0, 0.9, 0.65, 0.8);
 
-const float HDR_ON         = 1.0;     // 0 = off, 1 = on
+const float HDR_ON         = 1.0;
 const float SEED_CONST     = 30.0;
 
-const float TIME_CONST     = 0.0;     // set this manually if you want animation
+const float TIME_CONST     = 1.0;
 
-// -------- utility --------
 float random(vec2 uv) {
     return fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453123);
 }
@@ -53,8 +51,6 @@ mat2 rotate(float a) {
 vec4 screen(vec4 base, vec4 blend) {
     return 1.0 - (1.0 - base) * (1.0 - blend);
 }
-
-// -------------------------------------------------
 
 void main() {
     vec2 uv = v_vTexcoord;

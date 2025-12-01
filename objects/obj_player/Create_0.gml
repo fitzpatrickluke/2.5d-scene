@@ -21,7 +21,7 @@ for(var i = 0; i < ww; i+=1) {
 		height_map[# i, j] = 4;
 		if(j > 144 && j < 240) {
 			br += sin(br_m*0.5)*0.8
-			height_map[# i, j] = br;
+			height_map[# i, j] = br+4
 			if(j == 144+96/2)
 				br_m = bb*-1;
 		}
