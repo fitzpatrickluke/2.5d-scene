@@ -25,14 +25,17 @@ Also most of the code I didn't write but more so found online and took some time
 I'd say if you wanted to take a look at the code, the bulk of its is in the objects folder in obj_camera. Most of the shaders is code I found online.
 *************************************************************************************
 ASSET SOURCES
+
 SPRITES:
 Player: Me
 Trees: https://karsiori.itch.io/spruce-tree-pack-pixel-art-animated
 Bushes: https://karsiori.itch.io/free-pixel-art-bush-pack
 Flowers: https://karsiori.itch.io/free-pixel-art-flower-pack
 Deer: https://lyaseek.itch.io/miniffanimals
+
 3D OBJECTS:
 Bridge: https://sketchfab.com/3d-models/bridge-7d3d65090eb945e2996c23ac98adec70
+
 SOUNDS:
 River: https://freesound.org/people/Akacie/sounds/73716/
 Forest: https://freesound.org/people/klankbeeld/sounds/577488/
