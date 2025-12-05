@@ -10,24 +10,24 @@ v_buffer = vertex_create_buffer();
 
 zz = 0;
 
-spr_tex = Sprite20;
+spr_tex = spr_plant_3;
 
 var rr = irandom(5);
 switch(rr) {
 	case 1:
-	spr_tex = Sprite19;
+	spr_tex = spr_plant_2;
 	break;
 	case 2:
-	spr_tex = Sprite18;
+	spr_tex = spr_plant_1;
 	break;
 	case 3:
-	spr_tex = Sprite22;
+	spr_tex = spr_plant_4;
 	break;
 	case 4:
-	spr_tex = Sprite23;
+	spr_tex = spr_plant_5;
 	break;
 	case 5:
-	spr_tex = Sprite24;
+	spr_tex = spr_plant_6;
 	break;
 }
 spr_tex_w = sprite_get_width(spr_tex)/1.25;

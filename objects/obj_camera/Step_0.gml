@@ -1,8 +1,8 @@
 
 if((obj_player.x < 120 || obj_player.x > 288) && obj_player.y < 264)
-	audio_sound_gain(Sound1, 0.1, 500);
+	audio_sound_gain(Sound_water, 0.1, 500);
 else
-	audio_sound_gain(Sound1, 1, 1000);
+	audio_sound_gain(Sound_water, 1, 1000);
 
 /*
 var rr = irandom(3600);

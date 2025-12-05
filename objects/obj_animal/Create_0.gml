@@ -13,8 +13,8 @@ zz = 0;
 alarm[0] = 1;
 
 
-spr_tex_base = deer;
-spr_tex_run = deer_run;
+spr_tex_base = spr_deer_1;
+spr_tex_run = spr_deer_1_run;
 spr_tex = spr_tex_base;
 
 alert_run = false;

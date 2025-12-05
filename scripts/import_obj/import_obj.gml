@@ -4,13 +4,16 @@
 /// @param x
 /// @param y
 /// @param z
+/// @param scale
 
-function import_obj(argument0, argument1, argument2, argument3, argument4) {
+function import_obj(argument0, argument1, argument2, argument3, argument4, argument5) {
 	var filename = argument0;
 	var vertex_format = argument1;
     var buffer = buffer_load(filename);
     var content_string = buffer_read(buffer, buffer_text);
     buffer_delete(buffer);
+	
+	var scale = argument5;
     
     static px = buffer_create(10000, buffer_grow, 4);
     static py = buffer_create(10000, buffer_grow, 4);
@@ -145,19 +148,19 @@ function import_obj(argument0, argument1, argument2, argument3, argument4) {
 					var oy = argument3;
 					var oz = argument4;
 					
-                    vertex_position_3d(vb, v1_position_x+ox, v1_position_y+oy, v1_position_z+oz);
-                    vertex_normal(vb, v1_normal_x, v1_normal_y, v1_normal_z);
-                    vertex_texcoord(vb, v1_texcoord_x, v1_texcoord_y);
+                    vertex_position_3d(vb, v1_position_x*scale+ox, v1_position_y*scale+oy, v1_position_z*scale+oz);
+                    vertex_normal(vb, v1_normal_x*scale, v1_normal_y*scale, v1_normal_z*scale);
+                    vertex_texcoord(vb, v1_texcoord_x*scale, v1_texcoord_y*scale);
                     vertex_colour(vb, c_white, 1);
                     
-                    vertex_position_3d(vb, v2_position_x+ox, v2_position_y+oy, v2_position_z+oz);
-                    vertex_normal(vb, v2_normal_x, v2_normal_y, v2_normal_z);
-                    vertex_texcoord(vb, v2_texcoord_x, v2_texcoord_y);
+                    vertex_position_3d(vb, v2_position_x*scale+ox, v2_position_y*scale+oy, v2_position_z*scale+oz);
+                    vertex_normal(vb, v2_normal_x*scale, v2_normal_y*scale, v2_normal_z*scale);
+                    vertex_texcoord(vb, v2_texcoord_x*scale, v2_texcoord_y*scale);
                     vertex_colour(vb, c_white, 1);
                     
-                    vertex_position_3d(vb, v3_position_x+ox, v3_position_y+oy, v3_position_z+oz);
-                    vertex_normal(vb, v3_normal_x, v3_normal_y, v3_normal_z);
-                    vertex_texcoord(vb, v3_texcoord_x, v3_texcoord_y);
+                    vertex_position_3d(vb, v3_position_x*scale+ox, v3_position_y*scale+oy, v3_position_z*scale+oz);
+                    vertex_normal(vb, v3_normal_x*scale, v3_normal_y*scale, v3_normal_z*scale);
+                    vertex_texcoord(vb, v3_texcoord_x*scale, v3_texcoord_y*scale);
                     vertex_colour(vb, c_white, 1);
                 }
                 break;
