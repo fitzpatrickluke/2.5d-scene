@@ -28,6 +28,5 @@ if (!surface_exists(surf_bloom_blur_h)) {
 
 
 
-
 gpu_set_zwriteenable(true);
 gpu_set_ztestenable(true);

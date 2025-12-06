@@ -13,11 +13,12 @@ draw_surface(surface_draw, 0, 0)
 
 shader_reset();
 
-
 shader_set(shd_godRays);
 
 draw_surface(surface_draw, 0, 0);
 
 shader_reset();
 
+
+//draw_surface(surface_shadows, -400, -400)
 

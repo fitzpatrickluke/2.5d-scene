@@ -1,4 +1,3 @@
-draw_shadow = true;
 
 audio_play_sound(Sound_water, 1, true);
 audio_play_sound(Sound_forest, 1, true, 0.4);
@@ -35,3 +34,15 @@ surf_bloom_blur_h = surface_create(window_get_width(), window_get_height());
 surf_bloom_blur = surface_create(window_get_width(), window_get_height());
 
 
+// camera coordinates
+x_to = obj_player.x;
+y_to = obj_player.y;
+z_to = 0;
+
+x_from = obj_player.x;
+y_from = obj_player.y+72*1.5*2;
+z_from = 72*1.5
+
+x_offset = 0;
+y_offset = 0;
+z_offset = 0;

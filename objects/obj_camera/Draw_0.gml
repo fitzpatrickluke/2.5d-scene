@@ -4,22 +4,21 @@
 var camera = camera_get_active();
 
 // shadows
-draw_shadow = true;
 #region
 shader_set(shd_depth);
 surface_set_target(surface_shadows);
 draw_clear(c_black);
 
 // pov sun
-var x_from = sun_x;
-var y_from = sun_y;
-var z_from = sun_z;
+var x_from_sun = sun_x;
+var y_from_sun = sun_y;
+var z_from_sun = sun_z;
 
-var x_to = x_from + sun_dx;
-var y_to = y_from + sun_dy;
-var z_to = z_from + sun_dz;
+var x_to_sun = x_from_sun + sun_dx;
+var y_to_sun = y_from_sun + sun_dy;
+var z_to_sun = z_from_sun + sun_dz;
 
-light_view_mat = matrix_build_lookat(x_from, y_from, z_from, x_to, y_to, z_to, 0, 0, 1);
+light_view_mat = matrix_build_lookat(x_from_sun, y_from_sun, z_from_sun, x_to_sun, y_to_sun, z_to_sun, 0, 0, 1);
 light_proj_mat = matrix_build_projection_ortho(shadow_tex_surf_ww, -shadow_tex_surf_hh, 1, 1000);
 camera_set_view_mat(camera, light_view_mat);
 camera_set_proj_mat(camera, light_proj_mat);
@@ -36,7 +35,6 @@ surface_reset_target();
 #endregion
 
 // sprites and objects
-draw_shadow = false;
 #region
 
 shader_set(shd_light);
@@ -52,13 +50,6 @@ surface_set_target_ext(1, surf_depth)
 draw_clear(make_color_rgb(126, 189, 242));
 
 // pov player
-var x_to = obj_player.x;
-var y_to = obj_player.y;
-var z_to = 0;
-
-var x_from = obj_player.x;
-var y_from = obj_player.y+72*1.5*2;
-var z_from = 72*1.5
 
 view_mat = matrix_build_lookat(x_from, y_from, z_from, x_to, y_to, z_to, 0, 0, 1);
 proj_mat = matrix_build_projection_perspective_fov(-60, -window_get_width()/window_get_height(), 1, 1000);
