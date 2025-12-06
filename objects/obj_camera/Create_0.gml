@@ -17,7 +17,7 @@ sun_y = 200;
 sun_z = 400;
 
 sun_dx = 1.0; 
-sun_dy = -0.5
+sun_dy = -0.5;
 sun_dz = -1.0; 
 
 sun_spd_const = 0.0005;

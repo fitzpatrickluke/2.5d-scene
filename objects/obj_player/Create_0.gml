@@ -1,5 +1,6 @@
 curr_dir = 0;
 curr_frame = 0;
+curr_spr = spr_player_Idle;
 max_frame = 1;
 alarm[0] = 15;
 change_dir = false;

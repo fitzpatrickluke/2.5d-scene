@@ -23,23 +23,23 @@ else if(keyboard_check(ord("M"))) {
 	z_offset -= spd;
 }
 
-/*
+
 var rr = irandom(3600);
 if(!music_playing) {
 	
 	if(rr = 1) {
-		var _snd = audio_play_sound(Sound2, 0, true);
+		var _snd = audio_play_sound(Sound_music, 0, true);
 		audio_sound_gain(_snd, 0, 0);
 		audio_sound_gain(_snd, 0.05, 5000);
 		music_playing = true;
 	}
 }
-if(music_playing && !audio_is_playing(Sound2)) {
+if(music_playing && !audio_is_playing(Sound_music)) {
 	music_playing = false;
 }
 if(rr == 2) {
 	music_playing = false;
-	audio_stop_sound(Sound2)
+	audio_stop_sound(Sound_music)
 }
 
 
@@ -55,5 +55,5 @@ sun_dy += sun_dy_spd;
 if(sun_dx = 0 || (sun_dx == 1 || sun_dx == -1)) {
 	sun_dy_spd *= -1;
 }
-	
+
 */

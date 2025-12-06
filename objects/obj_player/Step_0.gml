@@ -10,6 +10,7 @@ if(keyboard_check(vk_down) || keyboard_check(ord("S"))) {
 	y += spd;
 	curr_dir = 0;
 	max_frame = 1;
+	curr_spr = spr_player_D;
 }
 else if(keyboard_check(vk_up) || keyboard_check(ord("W"))) {
 	var lay_id = layer_get_id("Tiles_1");
@@ -19,6 +20,7 @@ else if(keyboard_check(vk_up) || keyboard_check(ord("W"))) {
 	y -= spd;
 	curr_dir = 1;
 	max_frame = 1;
+	curr_spr = spr_player_U;
 }
 else if(keyboard_check(vk_right) || keyboard_check(ord("D"))) {
 	var lay_id = layer_get_id("Tiles_1");
@@ -28,6 +30,7 @@ else if(keyboard_check(vk_right) || keyboard_check(ord("D"))) {
 	x += spd;
 	curr_dir = 2;
 	max_frame = 1;
+	curr_spr = spr_player_R;
 }
 else if(keyboard_check(vk_left) || keyboard_check(ord("A"))) {
 
@@ -38,10 +41,12 @@ else if(keyboard_check(vk_left) || keyboard_check(ord("A"))) {
 	x -= spd;
 	curr_dir = 3;
 	max_frame = 1;
+	curr_spr = spr_player_L;
 }
 else {
 
 	curr_dir = 4;
 	max_frame = 3;
+	curr_spr = spr_player_Idle;
 }
 
