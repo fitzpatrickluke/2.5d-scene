@@ -46,3 +46,11 @@ z_from = 72*1.5
 x_offset = 0;
 y_offset = 0;
 z_offset = 0;
+
+cam_angle = 270;
+cam_distance = 72 * 1.5 * 2; // same as your original distance
+cam_height = 72 * 1.5;
+rot_speed = 2; // degrees per step
+rot_max = 45;
+cam_angle_bush = 270;
+bush_dcr = 0.5;

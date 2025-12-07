@@ -4,14 +4,48 @@ if((obj_player.x < 120 || obj_player.x > 288) && obj_player.y < 264)
 else
 	audio_sound_gain(Sound_water, 1, 1000);
 
-x_to = obj_player.x+x_offset;
-y_to = obj_player.y+y_offset;
-z_to = 0 + z_offset;
 
-x_from = obj_player.x+x_offset;
-y_from = obj_player.y+72*1.5*2+y_offset;
-z_from = 72*1.5 + z_offset;
+
+if (keyboard_check(ord("B"))) {
+    cam_angle += rot_speed;     // rotate clockwise
+	if(cam_angle > 270+rot_max)
+		cam_angle = 270+rot_max;
+		
+	cam_angle_bush += rot_speed*bush_dcr;     // rotate counter-clockwise
+	if(cam_angle_bush > 270+rot_max*bush_dcr)
+		cam_angle_bush = 270+rot_max*bush_dcr;
+}
+if (keyboard_check(ord("M"))) {
+    cam_angle -= rot_speed;     // rotate counter-clockwise
+	if(cam_angle < 270-rot_max)
+		cam_angle = 270-rot_max;
+		
+	cam_angle_bush -= rot_speed*bush_dcr;     // rotate counter-clockwise
+	if(cam_angle_bush < 270-rot_max*bush_dcr)
+		cam_angle_bush = 270-rot_max*bush_dcr;
+}
+var a = degtorad(cam_angle);
+
+// compute camera position around player (orbit)
+x_from = obj_player.x + lengthdir_x(cam_distance, cam_angle);
+y_from = obj_player.y + lengthdir_y(cam_distance, cam_angle);
+z_from = cam_height;
+
+// always look at player
+x_to = obj_player.x;
+y_to = obj_player.y;
+z_to = 0;
+
+/*
+x_to = obj_player.x;
+y_to = obj_player.y;
+z_to = 0;
+
+x_from = obj_player.x;
+y_from = obj_player.y+72*1.5*2;
+z_from = 72*1.5;
 var spd = 2;
+
 if(keyboard_check(ord("B"))) {
 	x_offset += spd;
 	y_offset += spd;
@@ -22,7 +56,7 @@ else if(keyboard_check(ord("M"))) {
 	y_offset -= spd;
 	z_offset -= spd;
 }
-
+*/
 
 var rr = irandom(3600);
 if(!music_playing) {

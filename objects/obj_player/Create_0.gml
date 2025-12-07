@@ -51,5 +51,3 @@ vertex_set_wall(v_buffer, 0, 0, zz, 24, 32, 24);
 
 vertex_end(v_buffer);
 
-
-
