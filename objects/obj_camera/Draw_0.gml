@@ -24,9 +24,9 @@ camera_set_view_mat(camera, light_view_mat);
 camera_set_proj_mat(camera, light_proj_mat);
 camera_apply(camera);
 
-with(obj_ground) {event_perform(ev_draw, 0);}
+with(obj_terrain) {event_perform(ev_draw, 0);}
 with(obj_object) {event_perform(ev_draw, 0);}
-with(obj_floor) {event_perform(ev_draw, 0);}
+with(obj_water) {event_perform(ev_draw, 0);}
 with(obj_player) {event_perform(ev_draw, 0);}
 
 shader_reset();
@@ -58,7 +58,7 @@ camera_set_proj_mat(camera, proj_mat);
 camera_apply(camera);
 
 
-with(obj_ground) {event_perform(ev_draw, 0);}
+with(obj_terrain) {event_perform(ev_draw, 0);}
 with(obj_object) {event_perform(ev_draw, 0);}
 with(obj_player) {event_perform(ev_draw, 0);}
 with(obj_particle) {event_perform(ev_draw, 0);}
@@ -78,7 +78,7 @@ texture_set_stage(shader_get_sampler_index(shd_water, "s_DepthTexture"), surface
 shader_set_uniform_f(shader_get_uniform(shd_water,"u_lightDirection"), sun_dx, sun_dz, -sun_dy);
 shader_set_uniform_f(shader_get_uniform(shd_water,"u_pointLightPos"), 400., -100, -100.);
 shader_set_uniform_f(shader_get_uniform(shd_water,"u_pointLightRange"), 20.);
-with(obj_floor) {event_perform(ev_draw, 0);}
+with(obj_water) {event_perform(ev_draw, 0);}
 shader_reset();
 gpu_set_tex_filter(false);
 gpu_set_tex_repeat(false);

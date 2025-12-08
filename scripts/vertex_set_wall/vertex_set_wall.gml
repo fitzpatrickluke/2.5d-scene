@@ -13,14 +13,12 @@ function vertex_set_wall(argument0, argument1, argument2, argument3, argument4, 
 	var zz = argument3;
 	var ww = argument4;
 	var hh = argument5;
-	
-	
 
-	var x1 = xx-ww; // left
-	var y1 = yy; // z
-	var x2 = xx; // right
-	var z1 = zz; // bottom
-	var z2 = zz+hh; // top
+	var x1 = xx-ww;
+	var y1 = yy;
+	var x2 = xx;
+	var z1 = zz;
+	var z2 = zz+hh;
 
 
 	// FRONT
@@ -33,5 +31,4 @@ function vertex_set_wall(argument0, argument1, argument2, argument3, argument4, 
 	vertex_add_point(v_buffer, x2, y1, z1, 0, 0, -1, 1, 1, c_white, 1); // BL
 	
 	
-
 }

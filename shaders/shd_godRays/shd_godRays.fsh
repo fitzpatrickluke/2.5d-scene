@@ -1,3 +1,6 @@
+// https://godotshaders.com/shader/god-rays/
+// used ai to change variable names to fit correct syntax
+
 // GameMaker Fragment Shader — constants version
 
 varying vec2 v_vTexcoord;

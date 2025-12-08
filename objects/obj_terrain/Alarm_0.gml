@@ -4,7 +4,6 @@ land_oy = (image_yscale-1)*24;
 
 vertex_begin(v_buffer, vertex_format);
 
-//vertex_set_cube(v_buffer, x, y, 0, 24, 24, 0, 0);
 vertex_set_cube_round(v_buffer, x, y, zz, land_w, land_ox, land_oy, land_oz, 4)
 
 vertex_end(v_buffer);

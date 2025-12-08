@@ -6,6 +6,8 @@
 /// @param z
 /// @param scale
 
+
+// https://github.com/DragoniteSpam-GameMaker-Tutorials/3DTutorial74OBJ/blob/master/scripts/import_obj/import_obj.gml
 function import_obj(argument0, argument1, argument2, argument3, argument4, argument5) {
 	var filename = argument0;
 	var vertex_format = argument1;

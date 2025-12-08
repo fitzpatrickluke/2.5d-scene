@@ -25,17 +25,17 @@ var rr = irandom(2);
 switch(rr) {
 	case 1:
 	spr_tex = spr_tree_1;
-spr_tex_w = sprite_get_width(spr_tex);
-spr_tex_h = sprite_get_height(spr_tex);
-max_frame = 22;
-scale = 16;
+	spr_tex_w = sprite_get_width(spr_tex);
+	spr_tex_h = sprite_get_height(spr_tex);
+	max_frame = 22;
+	scale = 16;
 	break;
 	case 2:
 	spr_tex = spr_tree_2;
-spr_tex_w = sprite_get_width(spr_tex);
-spr_tex_h = sprite_get_height(spr_tex);
-max_frame = 15;
-scale = 16;
+	spr_tex_w = sprite_get_width(spr_tex);
+	spr_tex_h = sprite_get_height(spr_tex);
+	max_frame = 15;
+	scale = 16;
 	break;
 }
 
@@ -43,7 +43,6 @@ curr_frame = irandom(max_frame);
 anim_time = irandom_range(4, 6);
 
 draw_shadow = true;
-
 
 
 alarm[1] = anim_time;

@@ -96,11 +96,7 @@ function vertex_set_cube_round(argument0, argument1, argument2, argument3, argum
 	vertex_add_point(v_buffer, x3, y4, z3, 0, 1, 0, 0, 1, c_white, 1); // BR
 	vertex_add_point(v_buffer, x4, y4, z3, 0, 1, 0, 1, 1, c_white, 1); // BL
 	
-	
-
-
-	
-
+	// bottom and back fasces are never seen so do not draw them
 
 
 }

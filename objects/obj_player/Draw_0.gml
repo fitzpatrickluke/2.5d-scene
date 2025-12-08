@@ -6,7 +6,4 @@ matrix_set(matrix_world, matrix_build(x+12, y+16, height_map[# y div grid_size, 
 
 vertex_submit(v_buffer, pr_trianglelist, sprite_get_texture(curr_spr, curr_frame));
 
-
-
-
 matrix_set(matrix_world, matrix_build_identity());
