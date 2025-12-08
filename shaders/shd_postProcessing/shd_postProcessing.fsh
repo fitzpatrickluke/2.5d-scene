@@ -36,7 +36,7 @@ void main()
     finalCol.b -= u_warmth * 0.05;
     finalCol = clamp(finalCol, 0.0, 1.0);
 	
-	/////////////// VIGNETTE
+	/////////////// VIGNETTE (adapted code from prev assignment)
 	
     vec2 centeredUv = v_vTexcoord * 2.0 - 1.0;
     //vec2 uvOffset = centeredUv.yx / curvature;

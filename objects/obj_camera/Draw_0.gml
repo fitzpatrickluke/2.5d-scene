@@ -61,6 +61,7 @@ camera_apply(camera);
 with(obj_ground) {event_perform(ev_draw, 0);}
 with(obj_object) {event_perform(ev_draw, 0);}
 with(obj_player) {event_perform(ev_draw, 0);}
+with(obj_particle) {event_perform(ev_draw, 0);}
 shader_reset();
 
 // water movement and foam

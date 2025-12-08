@@ -1,5 +1,5 @@
 
-var xx = irandom(window_get_width());
-var yy = irandom(window_get_height());
+x += spd_x;
+y += spd_y;
+zz += spd_z;
 
-part_particles_create(ps, xx, yy, pt, 1 + irandom(2));

@@ -54,3 +54,8 @@ rot_speed = 2; // degrees per step
 rot_max = 45;
 cam_angle_bush = 270;
 bush_dcr = 0.5;
+
+
+for(var i = 0; i < 200; i+= 1) {
+	instance_create_layer(0, 0, "Instances", obj_particle);
+}

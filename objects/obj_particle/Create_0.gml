@@ -1,41 +1,25 @@
 
+vertex_format_begin();
+vertex_format_add_position_3d();
+vertex_format_add_normal();
+vertex_format_add_texcoord();
+vertex_format_add_color();
+vertex_format = vertex_format_end();
 
-// Particle system
-ps = part_system_create();
-part_system_depth(ps, -100); // draw above stuff
+v_buffer = vertex_create_buffer();
 
-// Particle type
-pt = part_type_create();
+zz = irandom(120);
+x = irandom_range(-240, room_width+240);
+y = irandom_range(obj_player.y - 240, obj_player.y+360);
 
-// Visuals
-//part_type_shape(pt, pt_shape_circle);
-part_type_sprite(pt, spr_particle, 0, 0, 0)
-part_type_size(pt, 0.5, 2, 0, 0);
-part_type_color1(pt, c_red); // pale yellow & pale blue
-part_type_alpha3(pt, 0, 0.7, 0); // fade in/out
-part_type_blend(pt, true);
+spr_tex = spr_particle;
+spr_tex_w = random_range(0.5, 2)
 
-
-// Behavior
-part_type_speed(pt, 0.05, 0.15, 0, 0); // slow float
-part_type_direction(pt, 0, 360, 0, 0); // all directions
-part_type_gravity(pt, 0, 0);
-part_type_life(pt, 120, 300); // lives a while
-
-// Orientation wiggle
-part_type_orientation(pt, 0, 360, 0, 1, true);
-
-// Emitters so it hangs around the whole room
-em = part_emitter_create(ps);
-part_emitter_region(ps, em, 0, window_get_width(), 0, window_get_height(), ps_shape_rectangle, ps_distr_linear);
-part_emitter_stream(ps, em, pt, 2); // spawns every step, keeps room filled
+spd_x = random_range(-0.1, 0.1);
+spd_y = random_range(-0.05, 0.05);
+spd_z = random_range(-0.05, 0.05);
 
 
-/*
 
-
-num_lights = 8;
-spr_scale = 2;
-lights = array_create(0);
 alarm[0] = 1;
-*/
+
