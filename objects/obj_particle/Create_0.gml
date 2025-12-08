@@ -20,7 +20,7 @@ alarm[0] = 1;
 function setPos() {
 	zz = irandom(120);
 	x = irandom_range(-240, room_width+240);
-	y = irandom_range(obj_player.y - 240, obj_player.y+240);
+	y = irandom_range(obj_player.y - 240, obj_player.y+180);
 
 	spr_tex = spr_particle;
 	spr_tex_w = random_range(0.5, 2)
