@@ -9,6 +9,9 @@ uniform float u_near;
 uniform float u_far;
 uniform float u_focus;
 
+const  float u_res = 1000.0;
+const float curvature = 5.0;
+
 void main()
 {
 	/////////////// DEPTH OF FIELD
@@ -34,14 +37,22 @@ void main()
     finalCol = clamp(finalCol, 0.0, 1.0);
 	
 	/////////////// VIGNETTE
-	vec2 center = vec2(0.5, 0.5);
-    float dist = distance(v_vTexcoord, center);
-    float vignette = smoothstep(0.1, 0.9, dist);
-    finalCol.rgb *= mix(1.0, 0.1, vignette);
+	
+    vec2 centeredUv = v_vTexcoord * 2.0 - 1.0;
+    //vec2 uvOffset = centeredUv.yx / curvature;
+    //vec2 warpedUv = centeredUv + centeredUv * uvOffset * uvOffset;
+	//vec3 cutoff = vec3(step(abs(warpedUv.x), 1.0) * step(abs(warpedUv.y), 1.0));
+    //vec3 scanlines = vec3(sin(2.0 * warpedUv.y * (u_res / 2.0)) * 0.25 + 0.9);
+    vec3 vignette = vec3(length(pow(abs(centeredUv), vec2(2.0)) / 1.0));
+
+	//finalCol.rgb *= cutoff;
+	//finalCol.rgb *= scanlines;
+    finalCol.rgb -= vignette*0.4;
+
 
 	/////////////// CONTRAST AND EXPOSURE
 	finalCol.rgb = ((finalCol.rgb - 0.5) * 1.4) + 0.5;
-	finalCol.rgb *= 1.2;	
+	//finalCol.rgb *= 1.2;	
 
 	
     gl_FragColor = finalCol;
